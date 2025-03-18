@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import urijs from 'urijs';
+import "/css/compiled/styles.css";
 
 const apiBaseUrl = "http://localhost:3000";
 
@@ -36,7 +37,7 @@ function App() {
     }
 
     return <>
-            <img src={currentPlant.imageUrl} />
+            <img className="plant-image" src={currentPlant.imageUrl} />
             <div>
                 <p>{currentPlant.name}</p>
                 <em>{currentPlant.species}</em>
