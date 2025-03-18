@@ -1,290 +1,290 @@
 [
-    {
-       "group":"White Flowers",
-       "plants":[
-          {
-             "image":"bushclover.jpg",
-             "name":"Bush Clover",
-             "species":"Lespedeza capitata",
-             "bloomTime":"Aug-Sept"
-          },
-          {
-             "image":"Cream-Indigo-Bystricky.jpg",
-             "name":"Cream Indigo",
-             "species":"Baptisia leucophaea",
-             "bloomTime":"May-Jun"
-          },
-          {
-             "image":"flowering-spurge.jpg",
-             "name":"Flowering Spurge",
-             "species":"Euphorbia corollata",
-             "bloomTime":"Jul-Aug",
-             "comments":"Leaves turn red in August"
-          },
-          {
-             "image":"New-Jersey-Tea.jpg",
-             "name":"New Jersey Tea",
-             "species":"Ceanothus americanus",
-             "bloomTime":"Jul-Aug",
-             "comments":"Small Woody Shrub, hummingbird and butterfly friendly"
-          },
-          {
-             "image":"Shooting-Star.jpg",
-             "name":"Shooting Star",
-             "species":"Dodecatheon meadia",
-             "bloomTime":"May-Jun",
-             "comments":"Flower color varies from pink to white"
-          },
-          {
-             "image":"plant_white-indigo.jpg",
-             "name":"White Indigo",
-             "species":"Baptisia leucantha",
-             "bloomTime":"May-July"
-          },
-          {
-             "image":"White-Prairie-Clvr.jpg",
-             "name":"White Prairie Clover",
-             "species":"Petalostemum candidum",
-             "bloomTime":"Jun-Aug"
-          },
-          {
-             "image":"Quinine-Flwr.jpg",
-             "name":"Wild Quinine",
-             "species":"Parthenium integrifolium",
-             "bloomTime":"Jun-Sep"
-          }
-       ]
-    },
-    {
-       "group":"Yellow/Orange Flowers",
-       "plants":[
-          {
-             "image":"Black-eyed-group.jpg",
-             "name":"Black-Eyed Susan",
-             "species":"Rudbeckia hirta",
-             "bloomTime":"Jul-Sept",
-             "comments":"Butterfly Friendly"
-          },
-          {
-             "image":"Butt-weed-flwr-side.jpg",
-             "name":"Butterfly Weed",
-             "species":"Asclepias tuberosa",
-             "bloomTime":"Jun-Aug",
-             "comments":"Butterfly friendly; showy orange flowers"
-          },
-          {
-             "image":"Compass-Plant-flwr.jpg",
-             "name":"Compass Plant",
-             "species":"Silphium laciniatum",
-             "bloomTime":"Jun-Sep",
-             "comments":"Seeds are food source for birds"
-          },
-          {
-             "image":"Golden-Alex.jpg",
-             "name":"Heartleaf Golden Alexanders",
-             "species":"Zizia aptera",
-             "bloomTime":"May-Jun"
-          },
-          {
-             "image":"Prairie-Coreopsis.jpg",
-             "name":"Prairie Coreopsis",
-             "species":"Coreopsis palmata",
-             "bloomTime":"Jun-Aug"
-          },
-          {
-             "image":"Prairie-Dock-Flwr - Copy.jpg",
-             "name":"Prairie Dock",
-             "species":"Silphium terebinthinaceum",
-             "bloomTime":"Jul-Sep",
-             "comments":"Butterfly Friendly, Seeds are food source for birds"
-          },
-          {
-             "image":"plant_prairie-sunflower.jpg",
-             "name":"Prairie Sunflower",
-             "species":"Helianthus rigidus",
-             "bloomTime":"Jul-Oct",
-             "comments":"Butterfly Friendly; Possibly Aggressive"
-          },
-          {
-             "image":"plant_prickleypaircactus.jpg",
-             "name":"Prickly Pear Cactus",
-             "species":"Opuntia humifusa",
-             "bloomTime":"Jun-Jul",
-             "comments":"Edible fruit, Rock Gardens"
-          },
-          {
-             "image":"Rosin-Weed - Copy 3.jpg",
-             "name":"Rosin Weed",
-             "species":"Silphium integrifolium deamii",
-             "bloomTime":"Jul-Sep",
-             "comments":"Possibly Aggressive"
-          },
-          {
-             "image":"Showy-Goldenrod-Solidago-speciosa.jpg",
-             "name":"Showy Goldenrod",
-             "species":"Solidago speciosa",
-             "bloomTime":"Jul-Oct",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"Western-Sunflower.jpg",
-             "name":"Western Sunflower",
-             "species":"Helianthus occidentalis",
-             "bloomTime":"Jul-Aug",
-             "comments":"Butterfly friendly, Rock garden"
-          },
-          {
-             "image":"Yellow-Cnflwr.jpg",
-             "name":"Yellow Coneflower",
-             "species":"Ratibida pinnata",
-             "bloomTime":"Jul-Sep"
-          }
-       ]
-    },
-    {
-       "group":"Blue/Purple Flowers",
-       "plants":[
-          {
-             "image":"Aromatic-Aster-flwr.jpg",
-             "name":"Aromatic Aster",
-             "species":"Aster oblongifolius",
-             "bloomTime":"Aug-Oct",
-             "comments":"Mound of flowers"
-          },
-          {
-             "image":"Bergamot.jpg",
-             "name":"Bergamot",
-             "species":"Monarda fistulosa",
-             "bloomTime":"Jul-Sep",
-             "comments":"Hummingbird and butterfly friendly"
-          },
-          {
-             "image":"Birds-Foot-Violet-1.jpg",
-             "name":"Bird's Foot Violet",
-             "species":"Viola pedata",
-             "bloomTime":"Apr-Jun",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"plant_prairie-blue-eyed-grass.jpg",
-             "name":"Prairie Blue-Eyed Grass",
-             "species":"Sisyrinchium campestre",
-             "bloomTime":"May-Jun",
-             "comments":"May have white flowers"
-          },
-          {
-             "image":"Lead-Plant - Copy.jpg",
-             "name":"Lead Plant",
-             "species":"Amorpha canescens",
-             "bloomTime":"Jun-Jul",
-             "comments":"Orange stamens; Shrub; Butterfly friendly"
-          },
-          {
-             "image":"Pale-Purple-Coneflwr.jpg",
-             "name":"Pale Purple Coneflower",
-             "species":"Echinacea pallida",
-             "bloomTime":"Jun-Jul",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"plant-prairie-blazingstar.jpg",
-             "name":"Prairie Blazingstar",
-             "species":"Liatris pycnostachya",
-             "bloomTime":"Jul-Aug",
-             "comments":"AKA Gayfeather, Hummingbird & butterfly friendly"
-          },
-          {
-             "image":"plant_purple-prairie-clover.jpg",
-             "name":"Purple Prairie Clover",
-             "species":"Petalostemum purpureum",
-             "bloomTime":"Jul-Aug",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"silky-aster.jpg",
-             "name":"Silky Aster",
-             "species":"Aster sericeus",
-             "bloomTime":"Sep-Oct",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"plant_skyblueaster.jpg",
-             "name":"Sky Blue Aster",
-             "species":"Aster azureus",
-             "bloomTime":"Sep-Oct",
-             "comments":"Butterfly friendly"
-          },
-          {
-             "image":"Spiderwort-plt.jpg",
-             "name":"Common Spiderwort",
-             "species":"Tradescantia ohiensis",
-             "bloomTime":"May-Jun"
-          }
-       ]
-    },
-    {
-       "group":"Green Flowers",
-       "plants":[
-          {
-             "image":"Alum-Root.jpg",
-             "name":"Prairie Alumroot",
-             "species":"Heuchera richardsonii",
-             "bloomTime":"Sep-Oct"
-          },
-          {
-             "image":"Rattlesnake-Master-flwr.jpg",
-             "name":"Rattlesnake Master",
-             "species":"Eryngium yuccifolium",
-             "bloomTime":"Jun-Aug",
-             "comments":"Exotic globe-like flower"
-          },
-          {
-             "group":"Prairie Grasses",
-             "plants":[
-                {
-                   "image":"plant_big-bluestem.jpg",
-                   "name":"Big Bluestem",
-                   "species":"Andropogon gerardii",
-                   "bloomTime":"Sept-Oct",
-                   "comments":"Purple fall color"
-                },
-                {
-                   "image":"Indian-grass2.jpg",
-                   "name":"Indian Grass",
-                   "species":"Sorghastrum nutans",
-                   "bloomTime":"Aug-Sep",
-                   "comments":"Aggressive"
-                },
-                {
-                   "image":"Lil-Blue.jpg",
-                   "name":"Little Bluestem",
-                   "species":"Andropogon scoparius",
-                   "bloomTime":"Aug-Oct",
-                   "comments":"Great fall color"
-                },
-                {
-                   "image":"Prairie-Dropseed.jpg",
-                   "name":"Prairie Dropseed",
-                   "species":"Sporobolus heterolepis",
-                   "bloomTime":"Aug-Sep",
-                   "comments":"Beautiful fountain-like form; Great fall color"
-                },
-                {
-                   "image":"Bouteloua-curtipendula-Side-Oats-Grama.jpg",
-                   "name":"Side Oats Grama",
-                   "species":"Bouteloua curtipendula",
-                   "bloomTime":"Jul-Oct",
-                   "comments":"Unique seed structure formation"
-                },
-                {
-                   "image":"panicum-virgatum-switch-grass_main.jpg",
-                   "name":"Switch Grass",
-                   "species":"Panicum virgatum",
-                   "bloomTime":"Aug-Sep",
-                   "comments":"Spreads aggressively; Beautiful seed heads"
-                }
-             ]
-          }
-       ]
-   }
- ]
+   {
+      "group":"White Flowers",
+      "plants":[
+         {
+            "image":"bushclover.jpg",
+            "name":"Bush Clover",
+            "species":"Lespedeza capitata",
+            "bloomTime":"Aug-Sept"
+         },
+         {
+            "image":"Cream-Indigo-Bystricky.jpg",
+            "name":"Cream Indigo",
+            "species":"Baptisia leucophaea",
+            "bloomTime":"May-Jun"
+         },
+         {
+            "image":"flowering-spurge.jpg",
+            "name":"Flowering Spurge",
+            "species":"Euphorbia corollata",
+            "bloomTime":"Jul-Aug",
+            "comments":"Leaves turn red in August"
+         },
+         {
+            "image":"New-Jersey-Tea.jpg",
+            "name":"New Jersey Tea",
+            "species":"Ceanothus americanus",
+            "bloomTime":"Jul-Aug",
+            "comments":"Small Woody Shrub, hummingbird and butterfly friendly"
+         },
+         {
+            "image":"Shooting-Star.jpg",
+            "name":"Shooting Star",
+            "species":"Dodecatheon meadia",
+            "bloomTime":"May-Jun",
+            "comments":"Flower color varies from pink to white"
+         },
+         {
+            "image":"plant_white-indigo.jpg",
+            "name":"White Indigo",
+            "species":"Baptisia leucantha",
+            "bloomTime":"May-July"
+         },
+         {
+            "image":"White-Prairie-Clvr.jpg",
+            "name":"White Prairie Clover",
+            "species":"Petalostemum candidum",
+            "bloomTime":"Jun-Aug"
+         },
+         {
+            "image":"Quinine-Flwr.jpg",
+            "name":"Wild Quinine",
+            "species":"Parthenium integrifolium",
+            "bloomTime":"Jun-Sep"
+         }
+      ]
+   },
+   {
+      "group":"Yellow/Orange Flowers",
+      "plants":[
+         {
+            "image":"Black-eyed-group.jpg",
+            "name":"Black-Eyed Susan",
+            "species":"Rudbeckia hirta",
+            "bloomTime":"Jul-Sept",
+            "comments":"Butterfly Friendly"
+         },
+         {
+            "image":"Butt-weed-flwr-side.jpg",
+            "name":"Butterfly Weed",
+            "species":"Asclepias tuberosa",
+            "bloomTime":"Jun-Aug",
+            "comments":"Butterfly friendly; showy orange flowers"
+         },
+         {
+            "image":"Compass-Plant-flwr.jpg",
+            "name":"Compass Plant",
+            "species":"Silphium laciniatum",
+            "bloomTime":"Jun-Sep",
+            "comments":"Seeds are food source for birds"
+         },
+         {
+            "image":"Golden-Alex.jpg",
+            "name":"Heartleaf Golden Alexanders",
+            "species":"Zizia aptera",
+            "bloomTime":"May-Jun"
+         },
+         {
+            "image":"Prairie-Coreopsis.jpg",
+            "name":"Prairie Coreopsis",
+            "species":"Coreopsis palmata",
+            "bloomTime":"Jun-Aug"
+         },
+         {
+            "image":"Prairie-Dock-Flwr - Copy.jpg",
+            "name":"Prairie Dock",
+            "species":"Silphium terebinthinaceum",
+            "bloomTime":"Jul-Sep",
+            "comments":"Butterfly Friendly, Seeds are food source for birds"
+         },
+         {
+            "image":"plant_prairie-sunflower.jpg",
+            "name":"Prairie Sunflower",
+            "species":"Helianthus rigidus",
+            "bloomTime":"Jul-Oct",
+            "comments":"Butterfly Friendly; Possibly Aggressive"
+         },
+         {
+            "image":"plant_prickleypaircactus.jpg",
+            "name":"Prickly Pear Cactus",
+            "species":"Opuntia humifusa",
+            "bloomTime":"Jun-Jul",
+            "comments":"Edible fruit, Rock Gardens"
+         },
+         {
+            "image":"Rosin-Weed - Copy 3.jpg",
+            "name":"Rosin Weed",
+            "species":"Silphium integrifolium deamii",
+            "bloomTime":"Jul-Sep",
+            "comments":"Possibly Aggressive"
+         },
+         {
+            "image":"Showy-Goldenrod-Solidago-speciosa.jpg",
+            "name":"Showy Goldenrod",
+            "species":"Solidago speciosa",
+            "bloomTime":"Jul-Oct",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"Western-Sunflower.jpg",
+            "name":"Western Sunflower",
+            "species":"Helianthus occidentalis",
+            "bloomTime":"Jul-Aug",
+            "comments":"Butterfly friendly, Rock garden"
+         },
+         {
+            "image":"Yellow-Cnflwr.jpg",
+            "name":"Yellow Coneflower",
+            "species":"Ratibida pinnata",
+            "bloomTime":"Jul-Sep"
+         }
+      ]
+   },
+   {
+      "group":"Blue/Purple Flowers",
+      "plants":[
+         {
+            "image":"Aromatic-Aster-flwr.jpg",
+            "name":"Aromatic Aster",
+            "species":"Aster oblongifolius",
+            "bloomTime":"Aug-Oct",
+            "comments":"Mound of flowers"
+         },
+         {
+            "image":"Bergamot.jpg",
+            "name":"Bergamot",
+            "species":"Monarda fistulosa",
+            "bloomTime":"Jul-Sep",
+            "comments":"Hummingbird and butterfly friendly"
+         },
+         {
+            "image":"Birds-Foot-Violet-1.jpg",
+            "name":"Bird's Foot Violet",
+            "species":"Viola pedata",
+            "bloomTime":"Apr-Jun",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"plant_prairie-blue-eyed-grass.jpg",
+            "name":"Prairie Blue-Eyed Grass",
+            "species":"Sisyrinchium campestre",
+            "bloomTime":"May-Jun",
+            "comments":"May have white flowers"
+         },
+         {
+            "image":"Lead-Plant - Copy.jpg",
+            "name":"Lead Plant",
+            "species":"Amorpha canescens",
+            "bloomTime":"Jun-Jul",
+            "comments":"Orange stamens; Shrub; Butterfly friendly"
+         },
+         {
+            "image":"Pale-Purple-Coneflwr.jpg",
+            "name":"Pale Purple Coneflower",
+            "species":"Echinacea pallida",
+            "bloomTime":"Jun-Jul",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"plant-prairie-blazingstar.jpg",
+            "name":"Prairie Blazingstar",
+            "species":"Liatris pycnostachya",
+            "bloomTime":"Jul-Aug",
+            "comments":"AKA Gayfeather, Hummingbird & butterfly friendly"
+         },
+         {
+            "image":"plant_purple-prairie-clover.jpg",
+            "name":"Purple Prairie Clover",
+            "species":"Petalostemum purpureum",
+            "bloomTime":"Jul-Aug",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"silky-aster.jpg",
+            "name":"Silky Aster",
+            "species":"Aster sericeus",
+            "bloomTime":"Sep-Oct",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"plant_skyblueaster.jpg",
+            "name":"Sky Blue Aster",
+            "species":"Aster azureus",
+            "bloomTime":"Sep-Oct",
+            "comments":"Butterfly friendly"
+         },
+         {
+            "image":"Spiderwort-plt.jpg",
+            "name":"Common Spiderwort",
+            "species":"Tradescantia ohiensis",
+            "bloomTime":"May-Jun"
+         }
+      ]
+   },
+   {
+      "group":"Green Flowers",
+      "plants":[
+         {
+            "image":"Alum-Root.jpg",
+            "name":"Prairie Alumroot",
+            "species":"Heuchera richardsonii",
+            "bloomTime":"Sep-Oct"
+         },
+         {
+            "image":"Rattlesnake-Master-flwr.jpg",
+            "name":"Rattlesnake Master",
+            "species":"Eryngium yuccifolium",
+            "bloomTime":"Jun-Aug",
+            "comments":"Exotic globe-like flower"
+         }
+      ]
+   },
+   {
+      "group":"Prairie Grasses",
+      "plants":[
+         {
+            "image":"plant_big-bluestem.jpg",
+            "name":"Big Bluestem",
+            "species":"Andropogon gerardii",
+            "bloomTime":"Sept-Oct",
+            "comments":"Purple fall color"
+         },
+         {
+            "image":"Indian-grass2.jpg",
+            "name":"Indian Grass",
+            "species":"Sorghastrum nutans",
+            "bloomTime":"Aug-Sep",
+            "comments":"Aggressive"
+         },
+         {
+            "image":"Lil-Blue.jpg",
+            "name":"Little Bluestem",
+            "species":"Andropogon scoparius",
+            "bloomTime":"Aug-Oct",
+            "comments":"Great fall color"
+         },
+         {
+            "image":"Prairie-Dropseed.jpg",
+            "name":"Prairie Dropseed",
+            "species":"Sporobolus heterolepis",
+            "bloomTime":"Aug-Sep",
+            "comments":"Beautiful fountain-like form; Great fall color"
+         },
+         {
+            "image":"Bouteloua-curtipendula-Side-Oats-Grama.jpg",
+            "name":"Side Oats Grama",
+            "species":"Bouteloua curtipendula",
+            "bloomTime":"Jul-Oct",
+            "comments":"Unique seed structure formation"
+         },
+         {
+            "image":"panicum-virgatum-switch-grass_main.jpg",
+            "name":"Switch Grass",
+            "species":"Panicum virgatum",
+            "bloomTime":"Aug-Sep",
+            "comments":"Spreads aggressively; Beautiful seed heads"
+         }
+      ]
+   }  
+]
