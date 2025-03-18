@@ -50,15 +50,15 @@ function App() {
     return <>
             { plants.length > 0 && (
                 <div id="card-wrapper">
-                    <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+                    <button onClick={() => {showRandom(plants);}}>Advance</button>
+                    <button onClick={() => {removeCurrent();showRandom(plants);}}>Correct</button>
                     <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
                         <p>{currentPlant.name}</p>
                         <em>{currentPlant.species}</em>
                         <p>{currentPlant.bloomTime}</p>            
                     </div>
-                    <div>{plants.length}</div>
-                    <button onClick={() => {showRandom(plants);}}>Advance</button>
-                    <button onClick={() => {removeCurrent();showRandom(plants);}}>Correct</button>
+                    <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+                    <div>{plants.length} left</div>
                 </div>
                 )
             }
