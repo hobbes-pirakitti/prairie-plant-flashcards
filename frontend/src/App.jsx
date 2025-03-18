@@ -34,9 +34,9 @@ function App() {
       }, []);
 
     function showRandom(plantList) {
+        setIsShowingPlantInfo(false);
         const index = Math.floor(Math.random() * plantList.length);
         setCurrentPlant(plantList[index]);
-        setIsShowingPlantInfo(false);
     }
 
     function showPlantInfo(){
