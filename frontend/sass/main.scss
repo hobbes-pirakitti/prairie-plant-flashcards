@@ -14,10 +14,12 @@ div.plant-info {
     color: $hidden-color;
     background-color: $hidden-color;
     width: 100%;
+    cursor: pointer;
 
     &.unhidden {
         color: unset;
-        background-color: unset;        
+        background-color: unset;
+        cursor: unset;
         transition: color $unhide-duration, background-color $unhide-duration;
     }
 }
