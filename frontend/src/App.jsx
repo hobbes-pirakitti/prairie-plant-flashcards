@@ -43,15 +43,30 @@ function App() {
         setIsShowingPlantInfo(true);
     }
 
-    return <div id="card-wrapper">
-            <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
-            <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
-                <p>{currentPlant.name}</p>
-                <em>{currentPlant.species}</em>
-                <p>{currentPlant.bloomTime}</p>            
-            </div>
-            <button onClick={() => {showRandom(plants)}}>Next</button>
-        </div>
+    function removeCurrent() {
+        setPlants(plants.filter(p => p.name !== currentPlant.name));
+    }
+
+    return <>
+            { plants.length > 0 && (
+                <div id="card-wrapper">
+                    <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+                    <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
+                        <p>{currentPlant.name}</p>
+                        <em>{currentPlant.species}</em>
+                        <p>{currentPlant.bloomTime}</p>            
+                    </div>
+                    <div>{plants.length}</div>
+                    <button onClick={() => {showRandom(plants);}}>Advance</button>
+                    <button onClick={() => {removeCurrent();showRandom(plants);}}>Correct</button>
+                </div>
+                )
+            }
+            { plants.length == 0 && (
+                <div>All done!</div>
+                )
+            }
+        </>
     ;
 }
 
