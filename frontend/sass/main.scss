@@ -1,3 +1,23 @@
+
+$hidden-color: #666;
+$unhide-duration: 2s;
+
+#card-wrapper {
+    width: fit-content;
+    //background-color: #fcc;
+}
 img.plant-image {
     max-height: 50vh;
+}
+
+div.plant-info {
+    color: $hidden-color;
+    background-color: $hidden-color;
+    width: 100%;
+
+    &.unhidden {
+        color: unset;
+        background-color: unset;        
+        transition: color $unhide-duration, background-color $unhide-duration;
+    }
 }

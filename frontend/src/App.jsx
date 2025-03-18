@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import urijs from 'urijs';
 import "/css/compiled/styles.css";
 
@@ -7,6 +7,8 @@ const apiBaseUrl = "http://localhost:3000";
 function App() {
     const [plants, setPlants] = useState([]);
     const [currentPlant, setCurrentPlant] = useState({});
+    const [isShowingPlantInfo, setIsShowingPlantInfo] = useState(false);
+    const plantInfo = useRef();
 
     useEffect(() => {
         const dataUrl = new URL("data", apiBaseUrl);
@@ -34,17 +36,22 @@ function App() {
     function showRandom(plantList) {
         const index = Math.floor(Math.random() * plantList.length);
         setCurrentPlant(plantList[index]);
+        setIsShowingPlantInfo(false);
     }
 
-    return <>
-            <img className="plant-image" src={currentPlant.imageUrl} />
-            <div>
+    function showPlantInfo(){
+        setIsShowingPlantInfo(true);
+    }
+
+    return <div id="card-wrapper">
+            <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+            <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
                 <p>{currentPlant.name}</p>
                 <em>{currentPlant.species}</em>
                 <p>{currentPlant.bloomTime}</p>            
             </div>
             <button onClick={() => {showRandom(plants)}}>Next</button>
-        </>
+        </div>
     ;
 }
 
