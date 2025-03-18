@@ -1,10 +1,18 @@
-const express = require("express");
-const path = require("path");
-const app = express();
 const port = 3000;
 const jsonDataFileName = "data.json";
 const imagesFolder = "images";
 
+const express = require("express");
+const path = require("path");
+const cors = require('cors')
+const app = express();
+
+const corsOptions = {
+    origin: 'http://localhost:5173',
+    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/", (req, res) => {
