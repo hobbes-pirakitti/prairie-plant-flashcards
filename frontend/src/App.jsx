@@ -22,6 +22,7 @@ function App() {
             const allPlants = [];
             for (const plantGroup of plantGroups) {
                 for (const plant of plantGroup.plants) {
+                    plant.group = plantGroup.group;
                     plant.imageUrl = apiBaseUrl + urijs.joinPaths("/image", plant.image).href();
                     allPlants.push(plant);
                 }
@@ -47,11 +48,28 @@ function App() {
         setPlants(plants.filter(p => p.name !== currentPlant.name));
     }
 
+    function filter(plants, selection){
+        if (selection === "") {
+            showRandom(plants);    
+        }
+        else {
+            showRandom(plants.filter(p => p.group === selection));
+        }
+    }
+
     return <>
             { plants.length > 0 && (
                 <div id="card-wrapper">
                     <button onClick={() => {showRandom(plants);}}>Advance</button>
                     <button onClick={() => {removeCurrent();showRandom(plants);}}>Correct</button>
+                    <select name="groupFilter" onChange={(e) => filter(plants, e.target.value)}>
+                        <option key="None" name="">None ({plants.length})</option>
+                        {
+                            Array.from(new Set(plants.map(p=>p.group))).map(groupName => 
+                                <option key={groupName} value={groupName}>{groupName}&nbsp;({plants.filter(p =>p.group === groupName).length})</option>
+                            )
+                        }
+                    </select>
                     <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
                         <p>{currentPlant.name}</p>
                         <em>{currentPlant.species}</em>
