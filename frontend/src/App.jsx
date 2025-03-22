@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import urijs from 'urijs';
+import PlantGroupSelect from '/src/PlantGroupSelect.jsx';
 import "/css/compiled/styles.css";
 
 const apiBaseUrl = "http://localhost:3000";
@@ -102,6 +103,14 @@ function App() {
         setPlants(plants.filter(p => p.name !== currentPlant.name));
     }
 
+    function getPlantGroupsAndCounts() {
+        // deduplicate group names with Set
+        return Array.from(new Set(plants.map(p => p.group))).map(groupName => ({
+            Name: groupName,
+            Count: getFilteredPlants(groupName).length
+        }));
+    }
+
     return <>
             {                 
                 plants.length === 0 ? (
@@ -109,15 +118,7 @@ function App() {
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
                     <div>All done with current filter.  Choose another group to continue: 
-                        <select name="groupFilter" onChange={(e) => filter(e.target.value)}>
-                            <option key="Unselected" name=""></option>
-                            <option key="None" name="">None ({plants.length})</option>
-                            {
-                                Array.from(new Set(plants.map(p=>p.group))).map(groupName => 
-                                    <option key={groupName} value={groupName}>{groupName}&nbsp;({getFilteredPlants(groupName).length})</option>
-                                )
-                            }
-                        </select>
+                        <PlantGroupSelect showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
                 : currentPlant === null ? (
@@ -127,14 +128,7 @@ function App() {
                     <div id="card-wrapper">
                         <button onClick={handleAdvance}>Advance</button>
                         <button onClick={handleCorrect}>Correct</button>
-                        <select name="groupFilter" onChange={(e) => filter(e.target.value)}>
-                            <option key="None" name="">None ({plants.length})</option>
-                            {
-                                Array.from(new Set(plants.map(p=>p.group))).map(groupName => 
-                                    <option key={groupName} value={groupName}>{groupName}&nbsp;({getFilteredPlants(groupName).length})</option>
-                                )
-                            }
-                        </select>
+                        <PlantGroupSelect showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                         <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
                             <p>{currentPlant.name}</p>
                             <em>{currentPlant.species}</em>
