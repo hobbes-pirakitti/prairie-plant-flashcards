@@ -118,7 +118,7 @@ function App() {
                     <div>All done!</div>
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
-                    <div>All done with current filter.  Choose another group to continue: 
+                    <div>All done with {currentFilter}.  Choose another group to continue: 
                         <PlantGroupSelect showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
