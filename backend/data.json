@@ -9,12 +9,6 @@
             "bloomTime":"Aug-Sept"
          },
          {
-            "image":"Cream-Indigo-Bystricky.jpg",
-            "name":"Cream Indigo",
-            "species":"Baptisia leucophaea",
-            "bloomTime":"May-Jun"
-         },
-         {
             "image":"flowering-spurge.jpg",
             "name":"Flowering Spurge",
             "species":"Euphorbia corollata",
@@ -64,6 +58,12 @@
             "species":"Rudbeckia hirta",
             "bloomTime":"Jul-Sept",
             "comments":"Butterfly Friendly"
+         },
+         {
+            "image":"Cream-Indigo-Bystricky.jpg",
+            "name":"Cream Indigo",
+            "species":"Baptisia leucophaea",
+            "bloomTime":"May-Jun"
          },
          {
             "image":"Butt-weed-flwr-side.jpg",
