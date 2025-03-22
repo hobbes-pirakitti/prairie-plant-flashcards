@@ -76,6 +76,7 @@ function App() {
     }
 
     function handleAdvance() {
+        setIsShowingPlantInfo(false);
         setRandomPlant();
     }
 
