@@ -130,7 +130,7 @@ function App() {
                 )
                 : (
                     <div id="card-wrapper">
-                        <button onClick={handleAdvance}>Advance</button>
+                        <button onClick={handleAdvance} disabled={getFilteredPlants(currentFilter).length <= 1 ? true : false}>Advance</button>
                         <button onClick={handleCorrect}>Correct</button>
                         <PlantGroupSelect showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                         <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
