@@ -15,11 +15,13 @@ div.plant-info {
     background-color: $hidden-color;
     width: 100%;
     cursor: pointer;
+    user-select: none; // prevent accidenal reveals
 
     &.unhidden {
         color: unset;
         background-color: unset;
         cursor: unset;
         transition: color $unhide-duration, background-color $unhide-duration;
+        user-select: unset;
     }
 }
