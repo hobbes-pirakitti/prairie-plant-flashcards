@@ -10,6 +10,7 @@ function App() {
     const [currentPlant, setCurrentPlant] = useState(null);
     const [isShowingPlantInfo, setIsShowingPlantInfo] = useState(false);
     const [currentFilter, setCurrentFilter] = useState("");
+    const [hasServerError, setHasServerError] = useState(false);
     const plantInfo = useRef();
 
     useEffect(() => {
@@ -18,6 +19,11 @@ function App() {
         fetch(dataUrl.href)
           .then((res) => {
             return res.json();
+          })
+          .catch((e) => {
+            console.error(e.message);
+            setHasServerError(true);
+            return Promise.reject(e);
           })
           .then((plantGroups) => {
             console.log(plantGroups);
@@ -116,8 +122,11 @@ function App() {
     }
 
     return <>
-            {                 
-                plants.length === 0 ? (
+            {               
+                hasServerError ? (
+                    <div>There was an error on this page.  Please try again.</div>
+                )  
+                : plants.length === 0 ? (
                     <div>All done!</div>
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
