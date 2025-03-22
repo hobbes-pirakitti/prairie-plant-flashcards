@@ -51,7 +51,10 @@ function App() {
         setCurrentFilter(selectedFilter);  
     }
 
-    function getFilteredPlants(groupName) {
+    function getFilteredPlants(groupName) {        
+        if (groupName === "" || groupName === undefined || groupName === null) {
+            return plants;
+        }
         return plants.filter(p =>p.group === groupName);
     }
 
