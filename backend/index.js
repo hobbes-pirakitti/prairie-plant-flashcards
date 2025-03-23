@@ -4,15 +4,19 @@ const imagesFolder = "images";
 
 const express = require("express");
 const path = require("path");
-const cors = require('cors')
+const cors = require('cors');
+const https = require('https');
+const fs = require('fs');
 const app = express();
 
 const corsOptions = {
-    origin: ['http://localhost:5173', 'http://localhost'],
-    optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-
+    origin: (origin, callback) => { 
+        callback(null, true); 
+    }, 
+    credentials: true,
+  }; 
 app.use(cors(corsOptions));
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -29,6 +33,16 @@ app.get("/image/:imageName", (req, res) => {
     res.sendFile(iamgeFilePath);
 });
 
-app.listen(port, () => {
+/*
+app.listen(port, '0.0.0.0', () => {
+    console.log("Running.");
+}); */
+
+const httpsOptions = {
+    key: fs.readFileSync('./key.pem'),
+    cert: fs.readFileSync('./cert.pem')
+};
+
+const server = https.createServer(httpsOptions, app).listen(port, "0.0.0.0", () => {
     console.log("Running.");
 })

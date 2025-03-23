@@ -3,7 +3,7 @@ import urijs from 'urijs';
 import PlantGroupSelect from '/src/PlantGroupSelect.jsx';
 import "/css/compiled/styles.css";
 
-const apiBaseUrl = "http://localhost:3000";
+const apiBaseUrl = "https://172.16.0.254:3000";
 
 function App() {
     const [plants, setPlants] = useState([]);

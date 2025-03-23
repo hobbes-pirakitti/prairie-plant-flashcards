@@ -1,0 +1,24 @@
+https://stackoverflow.com/a/42298344
+
+run in cmd, not terminal
+
+"C:\Program Files\Git\usr\bin\openssl" req -x509 -newkey rsa:2048 -keyout keytmp.pem -out cert.pem -days 365
+"C:\Program Files\Git\usr\bin\openssl" rsa -in keytmp.pem -out key.pem
+
+const express = require('express')
+const app = express()
+const https = require('https')
+const fs = require('fs')
+const port = 3000
+
+app.get('/', (req, res) => {
+  res.send('WORKING!')
+})
+
+const httpsOptions = {
+  key: fs.readFileSync('./key.pem'),
+  cert: fs.readFileSync('./cert.pem')
+}
+const server = https.createServer(httpsOptions, app).listen(port, () => {
+  console.log('server running at ' + port)
+})

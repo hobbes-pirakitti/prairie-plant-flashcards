@@ -13,7 +13,8 @@
   "devDependencies": {
     "concurrently": "^9.1.2",
     "sass": "^1.86.0",
-    "vite": "^6.2.0"
+    "vite": "^6.2.0",
+    "vite-plugin-mkcert": "^1.17.8"
   },
   "dependencies": {
     "urijs": "^1.19.11"
