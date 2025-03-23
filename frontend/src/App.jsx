@@ -10,7 +10,7 @@ function App() {
     const [currentPlant, setCurrentPlant] = useState(null);
     const [isShowingPlantInfo, setIsShowingPlantInfo] = useState(false);
     const [currentFilter, setCurrentFilter] = useState("");
-    const [hasServerError, setHasServerError] = useState(false);
+    const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
 
     useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
           })
           .catch((e) => {
             console.error(e.message);
-            setHasServerError(true);
+            setServerError(e.message);
             return Promise.reject(e);
           })
           .then((plantGroups) => {
@@ -123,8 +123,11 @@ function App() {
 
     return <>
             {               
-                hasServerError ? (
-                    <div>There was an error on this page.  Please try again.</div>
+                serverError !== null && serverError !== "" ? (
+                    <>
+                    	<div>There was an error on this page.  Please try again.</div>
+                    	<div>{serverError}</div>
+                    </>
                 )  
                 : plants.length === 0 ? (
                     <div>All done!</div>
