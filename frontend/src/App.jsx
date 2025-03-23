@@ -1,6 +1,7 @@
 import React, {useState, useEffect, useRef} from 'react';
 import urijs from 'urijs';
 import PlantGroupSelect from '/src/PlantGroupSelect.jsx';
+import "/css/reset.css";
 import "/css/compiled/styles.css";
 
 const apiBaseUrl = "https://172.16.0.254:3000";

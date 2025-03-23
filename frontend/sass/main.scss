@@ -2,6 +2,22 @@
 $hidden-color: #666;
 $unhide-duration: 2s;
 
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+}
+
+body {
+    padding: 2rem;
+}
+
+input, button, select {
+    font-size: 2rem;    
+}
+
 #card-wrapper {
     width: fit-content;
     //background-color: #fcc;
@@ -11,6 +27,11 @@ img.plant-image {
 }
 
 div.plant-info {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    font-size: 2rem;
     color: $hidden-color;
     background-color: $hidden-color;
     width: 100%;
@@ -23,5 +44,28 @@ div.plant-info {
         cursor: unset;
         transition: color $unhide-duration, background-color $unhide-duration;
         user-select: unset;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    input, button, select {
+        font-size: 2rem;
+        height: 6rem;
+    }
+    button {
+        width: 50%;
+    }
+    select {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        padding-left: 2rem;
+        width: 100%;
+    }    
+    div.plant-info {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+    }
+    img.plant-image {
+        max-width: 100%;
     }
 }
