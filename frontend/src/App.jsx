@@ -125,16 +125,22 @@ function App() {
     return <>
             {               
                 serverError !== null && serverError !== "" ? (
-                    <>
-                    	<div>There was an error on this page.  Please try again.</div>
-                    	<div>{serverError}</div>
-                    </>
+                    <div id="server-error">
+                    	<p>There was an error on this page.  Please try again.</p>
+                    	<p>{serverError}</p>
+                        <p>
+                            May need to allow&nbsp;
+                            <a target="_blank" href={apiBaseUrl}>
+                                this page
+                            </a>.
+                        </p>
+                    </div>
                 )  
                 : plants.length === 0 ? (
-                    <div>All done!</div>
+                    <div id="all-done">All done!</div>
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
-                    <div>All done with {currentFilter}.  Choose another group to continue: 
+                    <div id="all-done-group">All done with {currentFilter}.  Choose another group to continue: 
                         <PlantGroupSelect showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
@@ -143,22 +149,28 @@ function App() {
                 )
                 : (
                     <div id="card-wrapper">
-                        <button onClick={handleAdvance} disabled={getFilteredPlants(currentFilter).length <= 1 ? true : false}>Advance</button>
-                        <button onClick={handleCorrect}>Correct</button>
-                        <PlantGroupSelect showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
-                        <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
-                            <p>{currentPlant.name}</p>
-                            <em>{currentPlant.species}</em>
-                            <p>{currentPlant.bloomTime}</p>            
-                        </div>
-                        <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
-                        <div>
-                            {
-                                currentFilter == "" ?
-                                    <span>{plants.length} left</span> 
-                                    : <span>{getFilteredPlants(currentFilter).length} left in group | {plants.length} total left</span>
-                            }
-                            
+                        <div id="flex-wrapper">
+                            <div id="button-wrapper">
+                                <button onClick={handleAdvance} disabled={getFilteredPlants(currentFilter).length <= 1 ? true : false}>Advance</button>
+                                <button onClick={handleCorrect}>Correct</button>
+                            </div>
+                            <PlantGroupSelect showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
+                            <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
+                                <p>{currentPlant.name}</p>
+                                <em>{currentPlant.species}</em>
+                                <p>{currentPlant.bloomTime}</p>            
+                            </div>
+                            <div id="image-and-stats-wrapper">
+                                <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+                                <div>
+                                    {
+                                        currentFilter == "" ?
+                                            <span>{plants.length} left</span> 
+                                            : <span>{getFilteredPlants(currentFilter).length} left in group | {plants.length} total left</span>
+                                    }
+                                    
+                                </div>
+                            </div>
                         </div>
                     </div>
                 )

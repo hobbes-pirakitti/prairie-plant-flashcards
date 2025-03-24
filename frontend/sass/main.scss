@@ -14,14 +14,25 @@ body {
     padding: 2rem;
 }
 
+#server-error {
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
 input, button, select {
     font-size: 2rem;    
+}
+
+#button-wrapper, select {
+    display: inline;
 }
 
 #card-wrapper {
     width: fit-content;
     //background-color: #fcc;
 }
+
 img.plant-image {
     max-height: 70vh;
 }
@@ -45,25 +56,82 @@ div.plant-info {
         transition: color $unhide-duration, background-color $unhide-duration;
         user-select: unset;
     }
+
+    & em {
+        font-style: italic;
+    }
 }
 
 @media only screen and (max-width: 768px) {
-    input, button, select {
+    #card-wrapper {
+        width: 100%;
+    }
+    img.plant-image {
+        width: 100%;
+    }
+
+    #flex-wrapper {
+        display: flex;
+        flex-direction: column;
+
+        & :nth-child(1) {
+            order: 4;
+        }
+        & :nth-child(2) {
+            order: 3;
+        }
+        & :nth-child(3) {
+            order: 2;
+        }
+        & :nth-child(4) {
+            order: 1;
+        }
+    }
+    input, select {
         font-size: 2rem;
         height: 6rem;
     }
     button {
         width: 50%;
+        height: 8rem;
     }
     select {
-        margin-top: 2rem;
-        margin-bottom: 1rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
         padding-left: 2rem;
         width: 100%;
     }    
+    #button-wrapper, select {
+        display: block;
+    }
+
+    #all-done, #all-done-group {
+        line-height: 2rem;
+    }
+    #all-done-group {
+        select {
+            margin-top: 1rem;
+        }
+    }
+
+    #image-and-stats-wrapper {
+        position: relative;
+
+        & > div {
+            position: absolute;
+            font-size: 1.5rem;
+            right: 0;
+            bottom: 0.2rem;
+            background-color: rgba(255, 255, 255, 0.75);
+            padding: 0.5rem 1rem;
+        }
+    }
     div.plant-info {
         font-size: 2.5rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+        margin-top: 1.25rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;    
     }
     img.plant-image {
         max-width: 100%;
