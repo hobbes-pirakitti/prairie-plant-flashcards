@@ -1,8 +1,8 @@
 import React from 'react';
 
-function PlantGroupSelect({ groups, showBlank, onChange }) {
+function PlantGroupSelect({ selectedValue, groups, showBlank, onChange }) {
     return <>
-        <select name="groupFilter" onChange={(e) => onChange(e.target.value)}>
+        <select name="groupFilter" value={selectedValue} onChange={(e) => onChange(e.target.value)}>
             {showBlank && <option key="Unselected" name=""></option>}
             <option key="None" name="">None ({groups.reduce(
                 (accumulator, current) => accumulator + current.Count,

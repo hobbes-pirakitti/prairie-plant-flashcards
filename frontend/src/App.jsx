@@ -141,7 +141,7 @@ function App() {
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
                     <div id="all-done-group">All done with {currentFilter}.  Choose another group to continue: 
-                        <PlantGroupSelect showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
+                        <PlantGroupSelect selectedValue={currentFilter} showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
                 : currentPlant === null ? (
@@ -154,7 +154,7 @@ function App() {
                                 <button onClick={handleAdvance} disabled={getFilteredPlants(currentFilter).length <= 1 ? true : false}>Advance</button>
                                 <button onClick={handleCorrect}>Correct</button>
                             </div>
-                            <PlantGroupSelect showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
+                            <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                             <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
                                 <p>{currentPlant.name}</p>
                                 <em>{currentPlant.species}</em>
