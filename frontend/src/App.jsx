@@ -151,8 +151,8 @@ function App() {
                     <div id="card-wrapper">
                         <div id="flex-wrapper">
                             <div id="button-wrapper">
-                                <button onClick={handleAdvance} disabled={getFilteredPlants(currentFilter).length <= 1 ? true : false}>Advance</button>
-                                <button onClick={handleCorrect}>Correct</button>
+                                <button onClick={handleAdvance} disabled={!isShowingPlantInfo}>Advance</button>
+                                <button onClick={handleCorrect} disabled={!isShowingPlantInfo}>Correct</button>
                             </div>
                             <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                             <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
