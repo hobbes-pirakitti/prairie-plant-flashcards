@@ -5,12 +5,14 @@
          {
             "image":"bushclover.jpg",
             "name":"Bush Clover",
+            "family":"Fabaceae",
             "species":"Lespedeza capitata",
             "bloomTime":"Aug-Sept"
          },
          {
             "image":"flowering-spurge.jpg",
             "name":"Flowering Spurge",
+            "family":"Euphorbiaceae",
             "species":"Euphorbia corollata",
             "bloomTime":"Jul-Aug",
             "comments":"Leaves turn red in August"
@@ -18,6 +20,7 @@
          {
             "image":"New-Jersey-Tea.jpg",
             "name":"New Jersey Tea",
+            "family":"Rhamnaceae",
             "species":"Ceanothus americanus",
             "bloomTime":"Jul-Aug",
             "comments":"Small Woody Shrub, hummingbird and butterfly friendly"
@@ -25,6 +28,7 @@
          {
             "image":"Shooting-Star.jpg",
             "name":"Shooting Star",
+            "family":"Primulaceae",
             "species":"Dodecatheon meadia",
             "bloomTime":"May-Jun",
             "comments":"Flower color varies from pink to white"
@@ -32,18 +36,21 @@
          {
             "image":"plant_white-indigo.jpg",
             "name":"White Indigo",
+            "family":"Fabaceae",
             "species":"Baptisia leucantha",
             "bloomTime":"May-July"
          },
          {
             "image":"White-Prairie-Clvr.jpg",
             "name":"White Prairie Clover",
+            "family":"Fabaceae",
             "species":"Petalostemum candidum",
             "bloomTime":"Jun-Aug"
          },
          {
             "image":"Quinine-Flwr.jpg",
             "name":"Wild Quinine",
+            "family":"Asteraceae",
             "species":"Parthenium integrifolium",
             "bloomTime":"Jun-Sep"
          }
@@ -55,6 +62,7 @@
          {
             "image":"Black-eyed-group.jpg",
             "name":"Black-Eyed Susan",
+            "family":"Asteraceae",
             "species":"Rudbeckia hirta",
             "bloomTime":"Jul-Sept",
             "comments":"Butterfly Friendly"
@@ -62,12 +70,14 @@
          {
             "image":"Cream-Indigo-Bystricky.jpg",
             "name":"Cream Indigo",
+            "family":"Fabaceae",
             "species":"Baptisia leucophaea",
             "bloomTime":"May-Jun"
          },
          {
             "image":"Butt-weed-flwr-side.jpg",
             "name":"Butterfly Weed",
+            "family":"Apocynaceae",
             "species":"Asclepias tuberosa",
             "bloomTime":"Jun-Aug",
             "comments":"Butterfly friendly; showy orange flowers"
@@ -75,6 +85,7 @@
          {
             "image":"Compass-Plant-flwr.jpg",
             "name":"Compass Plant",
+            "family":"Asteraceae",
             "species":"Silphium laciniatum",
             "bloomTime":"Jun-Sep",
             "comments":"Seeds are food source for birds"
@@ -82,18 +93,21 @@
          {
             "image":"Golden-Alex.jpg",
             "name":"Heartleaf Golden Alexanders",
+            "family":"Apiaceae",
             "species":"Zizia aptera",
             "bloomTime":"May-Jun"
          },
          {
             "image":"Prairie-Coreopsis.jpg",
             "name":"Prairie Coreopsis",
+            "family":"Asteraceae",
             "species":"Coreopsis palmata",
             "bloomTime":"Jun-Aug"
          },
          {
             "image":"Prairie-Dock-Flwr - Copy.jpg",
             "name":"Prairie Dock",
+            "family":"Asteraceae",
             "species":"Silphium terebinthinaceum",
             "bloomTime":"Jul-Sep",
             "comments":"Butterfly Friendly, Seeds are food source for birds"
@@ -101,6 +115,7 @@
          {
             "image":"plant_prairie-sunflower.jpg",
             "name":"Prairie Sunflower",
+            "family":"Asteraceae",
             "species":"Helianthus rigidus",
             "bloomTime":"Jul-Oct",
             "comments":"Butterfly Friendly; Possibly Aggressive"
@@ -108,6 +123,7 @@
          {
             "image":"plant_prickleypaircactus.jpg",
             "name":"Prickly Pear Cactus",
+            "family":"Cactaceae",
             "species":"Opuntia humifusa",
             "bloomTime":"Jun-Jul",
             "comments":"Edible fruit, Rock Gardens"
@@ -115,13 +131,15 @@
          {
             "image":"Rosin-Weed - Copy (3).jpg",
             "name":"Rosin Weed",
-            "species":"Silphium integrifolium deamii",
+            "family":"Asteraceae",
+            "species":"Silphium integrifolium",
             "bloomTime":"Jul-Sep",
             "comments":"Possibly Aggressive"
          },
          {
             "image":"Showy-Goldenrod-Solidago-speciosa.jpg",
             "name":"Showy Goldenrod",
+            "family":"Asteraceae",
             "species":"Solidago speciosa",
             "bloomTime":"Jul-Oct",
             "comments":"Butterfly friendly"
@@ -129,6 +147,7 @@
          {
             "image":"Western-Sunflower.jpg",
             "name":"Western Sunflower",
+            "family":"Asteraceae",
             "species":"Helianthus occidentalis",
             "bloomTime":"Jul-Aug",
             "comments":"Butterfly friendly, Rock garden"
@@ -136,6 +155,7 @@
          {
             "image":"Yellow-Cnflwr.jpg",
             "name":"Yellow Coneflower",
+            "family":"Asteraceae",
             "species":"Ratibida pinnata",
             "bloomTime":"Jul-Sep"
          }
@@ -147,6 +167,7 @@
          {
             "image":"Aromatic-Aster-flwr.jpg",
             "name":"Aromatic Aster",
+            "family":"Asteraceae",
             "species":"Aster oblongifolius",
             "bloomTime":"Aug-Oct",
             "comments":"Mound of flowers"
@@ -154,6 +175,7 @@
          {
             "image":"Bergamot.jpg",
             "name":"Bergamot",
+            "family":"Lamiaceae",
             "species":"Monarda fistulosa",
             "bloomTime":"Jul-Sep",
             "comments":"Hummingbird and butterfly friendly"
@@ -161,6 +183,7 @@
          {
             "image":"Birds-Foot-Violet-1.jpg",
             "name":"Bird's Foot Violet",
+            "family":"Violaceae",
             "species":"Viola pedata",
             "bloomTime":"Apr-Jun",
             "comments":"Butterfly friendly"
@@ -168,6 +191,7 @@
          {
             "image":"plant_prairie-blue-eyed-grass.jpg",
             "name":"Prairie Blue-Eyed Grass",
+            "family":"Iridaceae",
             "species":"Sisyrinchium campestre",
             "bloomTime":"May-Jun",
             "comments":"May have white flowers"
@@ -175,6 +199,7 @@
          {
             "image":"Lead-Plant - Copy.jpg",
             "name":"Lead Plant",
+            "family":"Fabaceae",
             "species":"Amorpha canescens",
             "bloomTime":"Jun-Jul",
             "comments":"Orange stamens; Shrub; Butterfly friendly"
@@ -182,6 +207,7 @@
          {
             "image":"Pale-Purple-Coneflwr.jpg",
             "name":"Pale Purple Coneflower",
+            "family":"Asteraceae",
             "species":"Echinacea pallida",
             "bloomTime":"Jun-Jul",
             "comments":"Butterfly friendly"
@@ -189,6 +215,7 @@
          {
             "image":"plant-prairie-blazingstar.jpg",
             "name":"Prairie Blazingstar",
+            "family":"Asteraceae",
             "species":"Liatris pycnostachya",
             "bloomTime":"Jul-Aug",
             "comments":"AKA Gayfeather, Hummingbird & butterfly friendly"
@@ -196,6 +223,7 @@
          {
             "image":"plant_purple-prairie-clover.jpg",
             "name":"Purple Prairie Clover",
+            "family":"Fabaceae",
             "species":"Petalostemum purpureum",
             "bloomTime":"Jul-Aug",
             "comments":"Butterfly friendly"
@@ -203,6 +231,7 @@
          {
             "image":"silky-aster.jpg",
             "name":"Silky Aster",
+            "family":"Asteraceae",
             "species":"Aster sericeus",
             "bloomTime":"Sep-Oct",
             "comments":"Butterfly friendly"
@@ -210,6 +239,7 @@
          {
             "image":"plant_skyblueaster.jpg",
             "name":"Sky Blue Aster",
+            "family":"Asteraceae",
             "species":"Aster azureus",
             "bloomTime":"Sep-Oct",
             "comments":"Butterfly friendly"
@@ -217,6 +247,7 @@
          {
             "image":"Spiderwort-plt.jpg",
             "name":"Common Spiderwort",
+            "family":"Commelinaceae",
             "species":"Tradescantia ohiensis",
             "bloomTime":"May-Jun"
          }
@@ -228,12 +259,14 @@
          {
             "image":"Alum-Root.jpg",
             "name":"Prairie Alumroot",
+            "family":"Saxifragaceae",
             "species":"Heuchera richardsonii",
             "bloomTime":"Sep-Oct"
          },
          {
             "image":"Rattlesnake-Master-flwr.jpg",
             "name":"Rattlesnake Master",
+            "family":"Apiaceae",
             "species":"Eryngium yuccifolium",
             "bloomTime":"Jun-Aug",
             "comments":"Exotic globe-like flower"
@@ -246,6 +279,7 @@
          {
             "image":"plant_big-bluestem.jpg",
             "name":"Big Bluestem",
+            "family":"Poaceae",
             "species":"Andropogon gerardii",
             "bloomTime":"Sept-Oct",
             "comments":"Purple fall color"
@@ -253,6 +287,7 @@
          {
             "image":"Indian-grass2.jpg",
             "name":"Indian Grass",
+            "family":"Poaceae",
             "species":"Sorghastrum nutans",
             "bloomTime":"Aug-Sep",
             "comments":"Aggressive"
@@ -260,6 +295,7 @@
          {
             "image":"Lil-Blue.jpg",
             "name":"Little Bluestem",
+            "family":"Poaceae",
             "species":"Andropogon scoparius",
             "bloomTime":"Aug-Oct",
             "comments":"Great fall color"
@@ -267,6 +303,7 @@
          {
             "image":"Prairie-Dropseed.jpg",
             "name":"Prairie Dropseed",
+            "family":"Poaceae",
             "species":"Sporobolus heterolepis",
             "bloomTime":"Aug-Sep",
             "comments":"Beautiful fountain-like form; Great fall color"
@@ -274,6 +311,7 @@
          {
             "image":"Bouteloua-curtipendula-Side-Oats-Grama.jpg",
             "name":"Side Oats Grama",
+            "family":"Poaceae",
             "species":"Bouteloua curtipendula",
             "bloomTime":"Jul-Oct",
             "comments":"Unique seed structure formation"
@@ -281,10 +319,11 @@
          {
             "image":"panicum-virgatum-switch-grass_main.jpg",
             "name":"Switch Grass",
+            "family":"Poaceae",
             "species":"Panicum virgatum",
             "bloomTime":"Aug-Sep",
             "comments":"Spreads aggressively; Beautiful seed heads"
          }
       ]
-   }  
+   }
 ]
