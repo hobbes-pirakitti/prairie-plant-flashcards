@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import urijs from 'urijs';
+import isMobile from 'is-mobile';
 import PlantGroupSelect from '/src/PlantGroupSelect.jsx';
 import "/css/reset.css";
 import "/css/compiled/styles.css";
@@ -13,6 +14,7 @@ function App() {
     const [currentFilter, setCurrentFilter] = useState("");
     const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
+    const isDesktop = !isMobile({ tablet: true });
 
     useEffect(() => {
         const dataUrl = new URL("data", apiBaseUrl);
@@ -151,8 +153,20 @@ function App() {
                     <div id="card-wrapper">
                         <div id="flex-wrapper">
                             <div id="button-wrapper">
-                                <button onClick={handleAdvance} disabled={!isShowingPlantInfo}>Advance</button>
-                                <button onClick={handleCorrect} disabled={!isShowingPlantInfo}>Correct</button>
+                                <button onClick={handleAdvance} disabled={!isShowingPlantInfo}>
+                                    {
+                                        isDesktop ? 
+                                        <span><u>A</u>dvance</span> : 
+                                        <span>Advance</span>
+                                    }
+                                </button>
+                                <button onClick={handleCorrect} disabled={!isShowingPlantInfo}>
+                                    {
+                                        isDesktop ? 
+                                        <span><u>C</u>orrect</span> : 
+                                        <span>Correct</span>
+                                    }
+                                </button>
                             </div>
                             <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                             <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
