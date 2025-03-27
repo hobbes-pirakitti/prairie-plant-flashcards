@@ -57,7 +57,22 @@ div.plant-info {
         user-select: unset;
     }
 
-    & em {
+    & p.plant-name {
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+    }
+
+    & p.family {
+        margin-bottom: -0.4rem;
+    }
+
+    & em.species,
+    & p.bloom-time {
+        font-size: 80%;
+
+    }
+
+    & em.species {
         font-style: italic;
     }
 }

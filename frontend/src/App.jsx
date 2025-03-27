@@ -170,9 +170,11 @@ function App() {
                             </div>
                             <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                             <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
-                                <p>{currentPlant.name}</p>
-                                <em>{currentPlant.species}</em>
-                                <p>{currentPlant.bloomTime}</p>            
+                                <p class="plant-name">{currentPlant.name}</p>
+
+                                <p class="family">{currentPlant.family}</p>
+                                <em class="species">{currentPlant.species}</em>
+                                <p class="bloom-time">{currentPlant.bloomTime}</p>            
                             </div>
                             <div id="image-and-stats-wrapper">
                                 <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
