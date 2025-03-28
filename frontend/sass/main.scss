@@ -38,6 +38,7 @@ img.plant-image {
 }
 
 div.plant-info {
+    position: relative;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-top: 0.5rem;
@@ -49,12 +50,27 @@ div.plant-info {
     cursor: pointer;
     user-select: none; // prevent accidenal reveals
 
+    &.is-desktop:after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        content: "Press R to reveal";
+        color: #fff;
+        top: 50%;
+        text-align: center;
+        transform: translateY(-50%);
+    }
+
     &.unhidden {
         color: unset;
         background-color: unset;
         cursor: unset;
         transition: color $unhide-duration, background-color $unhide-duration;
         user-select: unset;
+
+        &.is-desktop:after {
+            content: none;
+        }
     }
 
     & p.plant-name {

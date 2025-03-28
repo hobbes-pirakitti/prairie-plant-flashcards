@@ -1,6 +1,12 @@
 import React, {useState, useEffect, useRef} from 'react';
 import urijs from 'urijs';
 import isMobile from 'is-mobile';
+
+// note that this line needs to be fixed in the package:  
+//  "module": "./lib/index.esm.js",
+import { useKeyPress } from '@rsxt/keypress';
+
+import classNames from 'classnames';
 import PlantGroupSelect from '/src/PlantGroupSelect.jsx';
 import "/css/reset.css";
 import "/css/compiled/styles.css";
@@ -51,6 +57,16 @@ function App() {
         setIsShowingPlantInfo(false);
         setRandomPlant();
     }, [plants, currentFilter]);
+
+    useKeyPress(() => {
+        handleAdvance();
+    }, [{keys:['a','A']}]);
+    useKeyPress(() => {
+        handleCorrect();
+    }, [{keys:['c','C']}]);
+    useKeyPress(() => {
+        showPlantInfo();
+    }, [{keys:['r','R']}]); 
 
     function showPlantInfo(){
         setIsShowingPlantInfo(true);
@@ -169,12 +185,15 @@ function App() {
                                 </button>
                             </div>
                             <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
-                            <div className={"plant-info" + (isShowingPlantInfo ? " unhidden" : "")} onClick={showPlantInfo}>
-                                <p class="plant-name">{currentPlant.name}</p>
+                            <div className={classNames("plant-info", {
+                                    'unhidden': isShowingPlantInfo,
+                                    'is-desktop': isDesktop
+                                })} onClick={showPlantInfo}>
+                                <p className="plant-name">{currentPlant.name}</p>
 
-                                <p class="family">{currentPlant.family}</p>
-                                <em class="species">{currentPlant.species}</em>
-                                <p class="bloom-time">{currentPlant.bloomTime}</p>            
+                                <p className="family">{currentPlant.family}</p>
+                                <em className="species">{currentPlant.species}</em>
+                                <p className="bloom-time">{currentPlant.bloomTime}</p>            
                             </div>
                             <div id="image-and-stats-wrapper">
                                 <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />

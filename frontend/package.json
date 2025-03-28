@@ -17,6 +17,8 @@
     "vite-plugin-mkcert": "^1.17.8"
   },
   "dependencies": {
+    "@rsxt/keypress": "^1.0.9",
+    "classnames": "^2.5.1",
     "is-mobile": "^5.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
