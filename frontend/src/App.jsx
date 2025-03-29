@@ -16,7 +16,8 @@ const apiBaseUrl = "https://172.16.0.254:3000";
 function App() {
     const [plants, setPlants] = useState([]);
     const [currentPlant, setCurrentPlant] = useState(null);
-    const [isShowingPlantInfo, setIsShowingPlantInfo] = useState(false);
+    const [hasShownPlantInfo, setHasShownPlantInfo] = useState(false);
+    const [isRevealingPlantInfo, setIsRevealingPlantInfo] = useState(false);
     const [currentFilter, setCurrentFilter] = useState("");
     const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
@@ -54,22 +55,32 @@ function App() {
             console.log("No plants (1)");
             return;
         }
-        setIsShowingPlantInfo(false);
+        setHasShownPlantInfo(false);
+        setIsRevealingPlantInfo(false);
         setRandomPlant();
     }, [plants, currentFilter]);
 
     useKeyPress(() => {
-        handleAdvance();
+        if (hasShownPlantInfo) {
+            handleAdvance();
+        }
     }, [{keys:['a','A']}]);
     useKeyPress(() => {
-        handleCorrect();
+        if (hasShownPlantInfo) {
+            handleCorrect();
+        }
     }, [{keys:['c','C']}]);
     useKeyPress(() => {
         showPlantInfo();
     }, [{keys:['r','R']}]); 
 
     function showPlantInfo(){
-        setIsShowingPlantInfo(true);
+        setIsRevealingPlantInfo(true);
+
+        window.setTimeout(() => {
+            setIsRevealingPlantInfo(false);
+            setHasShownPlantInfo(true);
+        }, isDesktop ? 1500 : 1000);
     }
 
     function filter(selectedFilter){
@@ -104,7 +115,8 @@ function App() {
     }
 
     function handleAdvance() {
-        setIsShowingPlantInfo(false);
+        setHasShownPlantInfo(false);
+        setIsRevealingPlantInfo(false);
         setRandomPlant();
     }
 
@@ -169,14 +181,14 @@ function App() {
                     <div id="card-wrapper">
                         <div id="flex-wrapper">
                             <div id="button-wrapper">
-                                <button onClick={handleAdvance} disabled={!isShowingPlantInfo}>
+                                <button onClick={handleAdvance} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
                                     {
                                         isDesktop ? 
                                         <span><u>A</u>dvance</span> : 
                                         <span>Advance</span>
                                     }
                                 </button>
-                                <button onClick={handleCorrect} disabled={!isShowingPlantInfo}>
+                                <button onClick={handleCorrect} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
                                     {
                                         isDesktop ? 
                                         <span><u>C</u>orrect</span> : 
@@ -186,7 +198,7 @@ function App() {
                             </div>
                             <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
                             <div className={classNames("plant-info", {
-                                    'unhidden': isShowingPlantInfo,
+                                    'unhidden': hasShownPlantInfo || isRevealingPlantInfo,
                                     'is-desktop': isDesktop
                                 })} onClick={showPlantInfo}>
                                 <p className="plant-name">{currentPlant.name}</p>

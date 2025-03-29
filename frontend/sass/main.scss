@@ -1,6 +1,7 @@
 
 $hidden-color: #666;
-$unhide-duration: 2s;
+$desktop-unhide-duration: 2s;
+$mobile-unhide-duration: 1.6s;
 
 html {
     font-size: 62.5%;
@@ -65,8 +66,12 @@ div.plant-info {
         color: unset;
         background-color: unset;
         cursor: unset;
-        transition: color $unhide-duration, background-color $unhide-duration;
         user-select: unset;
+        
+        transition: color $mobile-unhide-duration, background-color $mobile-unhide-duration;
+        &.is-desktop {
+            transition: color $desktop-unhide-duration, background-color $desktop-unhide-duration;
+        }
 
         &.is-desktop:after {
             content: none;
