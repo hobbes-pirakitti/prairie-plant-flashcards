@@ -7,10 +7,10 @@ The backend is for now a mocked database.
 
 Desktop view:
 
-<img src="https://github.com/user-attachments/assets/4d0e631a-b4f8-4dc0-80f2-145c8b2c0cc8"  width="300" />
+<img src="https://raw.githubusercontent.com/hobbes-pirakitti/prairie-plant-flashcards/refs/heads/master/screenshots/desktop-view.jpg"  width="300" />
  
 
 Mobile responsive view:
 
-<img src="https://github.com/user-attachments/assets/38731dd2-31de-439e-aa43-2c54a3a263c2"  width="300" />
+<img src="https://github.com/hobbes-pirakitti/prairie-plant-flashcards/blob/master/screenshots/mobile-view.jpg?raw=true"  width="300" />
 
