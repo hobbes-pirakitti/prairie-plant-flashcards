@@ -96,9 +96,22 @@ function App() {
 
     function setRandomPlant() {
         let newPlant = null;
-        if (currentFilter === "" || currentFilter === undefined || currentFilter === null) {
-            const index = Math.floor(Math.random() * plants.length);
-            newPlant = plants[index];
+
+        if (plants.length === 1) {
+            setCurrentPlant(plants[0]);
+            return;
+        }        
+
+        if (!!currentFilter && getFilteredPlants(currentFilter).length == 1) {
+            setCurrentPlant(getFilteredPlants(currentFilter)[0]);
+            return;
+        }
+
+        if (!!!currentFilter) {
+            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
+                const index = Math.floor(Math.random() * plants.length);
+                newPlant = plants[index];
+            }
         }
         else {
             const filteredPlants = getFilteredPlants(currentFilter);
@@ -107,8 +120,10 @@ function App() {
                 return;
             }            
             
-            const filteredIndex = Math.floor(Math.random() * filteredPlants.length);
-            newPlant = filteredPlants[filteredIndex];
+            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
+                const filteredIndex = Math.floor(Math.random() * filteredPlants.length);
+                newPlant = filteredPlants[filteredIndex];
+            }
         }
         
         setCurrentPlant(newPlant);
