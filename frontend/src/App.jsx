@@ -56,10 +56,7 @@ function App() {
             console.log("No plants (1)");
             return;
         }
-        //otherAdvanceHotspot.current.classList.remove('hover');
-        setHasShownPlantInfo(false);
-        setIsRevealingPlantInfo(false);
-        setRandomPlant();
+        resetUI();
     }, [plants, currentFilter]);
 
     useKeyPress(() => {
@@ -132,11 +129,7 @@ function App() {
     }
 
     function handleAdvance() {
-        otherAdvanceHotspot.current.classList.remove('hover');
-
-        setHasShownPlantInfo(false);
-        setIsRevealingPlantInfo(false);
-        setRandomPlant();
+        resetUI();
     }
 
     function otherAdvanceHotspotClick(e) {    
@@ -144,8 +137,14 @@ function App() {
     }
 
     function handleShortlist() {
-        otherAdvanceHotspot.current.classList.remove('hover');
-        setHasShownPlantInfo(false);        
+        resetUI();
+    }
+
+    function resetUI() {
+        if (otherAdvanceHotspot && otherAdvanceHotspot.current) {
+            otherAdvanceHotspot.current.classList.remove('hover');
+        }
+        setHasShownPlantInfo(false);
         setIsRevealingPlantInfo(false);
         setRandomPlant();
     }
