@@ -21,6 +21,7 @@ function App() {
     const [currentFilter, setCurrentFilter] = useState("");
     const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
+    const otherAdvanceHotspot = useRef(null);
     const isDesktop = !isMobile({ tablet: true });
 
     useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
             console.log("No plants (1)");
             return;
         }
+        //otherAdvanceHotspot.current.classList.remove('hover');
         setHasShownPlantInfo(false);
         setIsRevealingPlantInfo(false);
         setRandomPlant();
@@ -130,7 +132,20 @@ function App() {
     }
 
     function handleAdvance() {
+        otherAdvanceHotspot.current.classList.remove('hover');
+
         setHasShownPlantInfo(false);
+        setIsRevealingPlantInfo(false);
+        setRandomPlant();
+    }
+
+    function otherAdvanceHotspotClick(e) {    
+        e.target.classList.toggle('hover');
+    }
+
+    function handleShortlist() {
+        otherAdvanceHotspot.current.classList.remove('hover');
+        setHasShownPlantInfo(false);        
         setIsRevealingPlantInfo(false);
         setRandomPlant();
     }
@@ -196,13 +211,29 @@ function App() {
                     <div id="card-wrapper">
                         <div id="flex-wrapper">
                             <div id="button-wrapper">
-                                <button onClick={handleAdvance} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
-                                    {
-                                        isDesktop ? 
-                                        <span><u>A</u>dvance</span> : 
-                                        <span>Advance</span>
-                                    }
-                                </button>
+                                <div id="advance-action-wrapper">
+                                    <button onClick={handleAdvance} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
+                                        {
+                                            isDesktop ? 
+                                            <span><u>A</u>dvance</span> : 
+                                            <span>Advance</span>
+                                        }
+                                    </button>
+                                    <div id="other-advance-actions-hotspot" ref={otherAdvanceHotspot} onClick={otherAdvanceHotspotClick} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
+                                        
+                                    </div>
+                                    <ul id="other-advance-actions">
+                                        <li>
+                                            <button onClick={handleShortlist}>
+                                                {
+                                                    isDesktop ? 
+                                                    <span><u>S</u>hortlist</span> : 
+                                                    <span>Shortlist</span>
+                                                }
+                                            </button>                                            
+                                        </li>
+                                    </ul>
+                                </div>
                                 <button onClick={handleCorrect} disabled={!hasShownPlantInfo || isRevealingPlantInfo}>
                                     {
                                         isDesktop ? 

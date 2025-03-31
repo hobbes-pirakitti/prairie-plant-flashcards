@@ -1,7 +1,16 @@
 
 $hidden-color: #666;
+
 $desktop-unhide-duration: 2s;
 $mobile-unhide-duration: 1.6s;
+
+$desktop-button-height: 3.5rem;
+$desktop-button-width: 15rem;
+
+$desktop-triangle-size: 8px;
+$mobile-triangle-size: 12px;
+
+$mobile-button-height: 8rem;
 
 html {
     font-size: 62.5%;
@@ -26,7 +35,74 @@ input, button, select {
 }
 
 #button-wrapper, select {
-    display: inline;
+    display: inline-block;
+    height: $desktop-button-height;
+}
+
+#button-wrapper button {
+    width: $desktop-button-width;
+    height: $desktop-button-height;
+}
+
+div#advance-action-wrapper {
+    display: inline-block;
+    position: relative;
+
+    & div#other-advance-actions-hotspot {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 2.5rem;
+        height: $desktop-button-height;
+        //background-color: #f00; // debugging
+
+        &:before {
+            position: absolute;
+            top: 50%;
+            display: block;
+            width: 0; 
+            height: 0; 
+            transform: translate(calc($desktop-triangle-size / 2), -50%);
+            content: "";
+            border-left: $desktop-triangle-size solid transparent;
+            border-right: $desktop-triangle-size solid transparent;
+            border-top: $desktop-triangle-size solid #aaa;
+        }
+
+        &[disabled] {
+            pointer-events: none;
+
+            &:before {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    & ul#other-advance-actions {
+        position: absolute;
+        display: none;
+        z-index: 1;
+        transform: translate(0, -1px);
+    }
+
+    & div#other-advance-actions-hotspot:hover,
+    & div#other-advance-actions-hotspot.hover {
+        & + ul#other-advance-actions {
+            display: block;
+        }
+    }
+    
+    ul#other-advance-actions:hover {
+        display: block;
+    }
+
+    // handle the situation where the user has just clicked on an option but is still technically
+    // hovering over it, where the above rule would have left the options still displaying
+    & div#other-advance-actions-hotspot[disabled] {
+        & + ul#other-advance-actions {
+            display: none;
+        }
+    }
 }
 
 #card-wrapper {
@@ -130,10 +206,47 @@ div.plant-info {
         font-size: 2rem;
         height: 6rem;
     }
-    button {
-        width: 50%;
-        height: 8rem;
+    
+    #button-wrapper {
+        & > div,
+        & > button {
+            width: 50%;
+            height: $mobile-button-height;
+        }
+        & #advance-action-wrapper {
+            & > button,
+            & > div,
+            & ul {
+                width: 100%;
+                height: $mobile-button-height;
+            }
+
+            & div#other-advance-actions-hotspot {                
+                //background-color: #f00;
+                height: $mobile-button-height;
+                width: calc($mobile-triangle-size + 3rem);
+
+                &:before {
+                    transform: translate(calc(0.5rem + $mobile-triangle-size / 2), -50%);
+                    border-left-width: $mobile-triangle-size;
+                    border-right-width: $mobile-triangle-size;
+                    border-top-width: $mobile-triangle-size;
+                }
+            }
+
+            & ul#other-advance-actions {
+                //display: block;
+                & button {
+                    $other-advance-actions-height: calc(0.75 * $mobile-button-height);
+
+                    width: 100%;
+                    height: $other-advance-actions-height;
+                    transform: translate(0, calc(0rem - $mobile-button-height - $other-advance-actions-height + 2px));
+                }
+            }
+        }
     }
+
     select {
         margin-top: 0;
         margin-bottom: 2rem;
