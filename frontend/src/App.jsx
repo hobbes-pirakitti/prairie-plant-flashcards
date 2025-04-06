@@ -13,21 +13,32 @@ import "/css/compiled/styles.css";
 
 const apiBaseUrl = "https://172.16.0.254:3000";
 
+const allFilterableAttributes = ["bloomColor", "family"];
+
+const filterDisplayNameMap = new Map();
+filterDisplayNameMap.set("bloomColor", "Bloom color");
+filterDisplayNameMap.set("family", "Family");
+
+const filterLambdaGeneratorMap = new Map();
+filterLambdaGeneratorMap.set("bloomColor", (bloomColorName) => (p => p.filterAttributes.bloomColor === bloomColorName));
+filterLambdaGeneratorMap.set("family", (familyName) => (p => p.filterAttributes.family === familyName));
+
 function App() {
     const [plants, setPlants] = useState([]);
     const [currentPlant, setCurrentPlant] = useState(null);
     const [hasShownPlantInfo, setHasShownPlantInfo] = useState(false);
     const [isRevealingPlantInfo, setIsRevealingPlantInfo] = useState(false);
-    const [currentFilter, setCurrentFilter] = useState("");
+    const [currentFilter, setCurrentFilter] = useState(""); // pipe-separated, eg, "family|Asteraceae"
+    const currentFilterDisplayName = useRef("");    
     const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
     const otherAdvanceHotspot = useRef(null);
     const isDesktop = !isMobile({ tablet: true });
 
     useEffect(() => {
-        const dataUrl = new URL("data", apiBaseUrl);
+        const plantsDataUrl = new URL("plants", apiBaseUrl);
 
-        fetch(dataUrl.href)
+        fetch(plantsDataUrl.href)
           .then((res) => {
             return res.json();
           })
@@ -36,18 +47,16 @@ function App() {
             setServerError(e.message);
             return Promise.reject(e);
           })
-          .then((plantGroups) => {
-            console.log(plantGroups);
-            const allPlants = [];
-            for (const plantGroup of plantGroups) {
-                for (const plant of plantGroup.plants) {
-                    plant.group = plantGroup.group;
-                    plant.imageUrl = apiBaseUrl + urijs.joinPaths("/image", plant.image).href();
-                    allPlants.push(plant);
-                }
+          .then((apiPlants) => {
+            console.log(apiPlants);
+            for (const apiPlant of apiPlants) {
+                apiPlant.imageUrl = apiBaseUrl + urijs.joinPaths("/image", apiPlant.image).href();
+                apiPlant.filterAttributes = {
+                    bloomColor: apiPlant.bloomColor,
+                    family: apiPlant.family
+                };
             }
-            console.log(`Got ${allPlants.length} plants.`);
-            setPlants(allPlants);
+            setPlants(apiPlants);
           });
       }, []);
 
@@ -82,15 +91,26 @@ function App() {
         }, isDesktop ? 1500 : 1000);
     }
 
-    function filter(selectedFilter){
+    function handleDropdownFilterChange(selectedFilter){
+        if (!!!selectedFilter) {
+            currentFilterDisplayName.current = "";
+            setCurrentFilter("");
+        }
+
+        const [attributeName, attributeValue] = selectedFilter.split("|");
+        
+        currentFilterDisplayName.current = `${filterDisplayNameMap.get(attributeName)}: ${attributeValue}`;
         setCurrentFilter(selectedFilter);  
     }
 
-    function getFilteredPlants(groupName) {        
-        if (groupName === "" || groupName === undefined || groupName === null) {
+    function getFilteredPlants(pipeSeparatedFilter) {        
+        if (!!!pipeSeparatedFilter) {
             return plants;
         }
-        return plants.filter(p =>p.group === groupName);
+
+        const [attributeName, attributeValue] = pipeSeparatedFilter.split("|");
+        const filterLambda = filterLambdaGeneratorMap.get(attributeName)(attributeValue);
+        return plants.filter(filterLambda);
     }
 
     function setRandomPlant() {
@@ -174,12 +194,19 @@ function App() {
     }
 
     function getPlantGroupsAndCounts() {
-        // deduplicate group names with Set
-        return Array.from(new Set(plants.map(p => p.group))).map(groupName => ({
-            Name: groupName,
-            Count: getFilteredPlants(groupName).length
-        }));
-    }
+        return allFilterableAttributes.map(filterName => {                        
+            return {
+                AttributeDisplayName: filterDisplayNameMap.get(filterName),
+                
+                // deduplicate group names with Set
+                AttributeValues: Array.from(new Set(plants.map(p => p.filterAttributes[filterName]))).map(filterValue => ({
+                    DisplayName: filterValue,
+                    FilterExpression: `${filterName}|${filterValue}`,
+                    Count: getFilteredPlants(`${filterName}|${filterValue}`).length
+                }))
+            };
+        });
+    }            
 
     return <>
             {               
@@ -199,8 +226,10 @@ function App() {
                     <div id="all-done">All done!</div>
                 )                
                 : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
-                    <div id="all-done-group">All done with {currentFilter}.  Choose another group to continue: 
-                        <PlantGroupSelect selectedValue={currentFilter} showBlank={true} onChange={filter} groups={getPlantGroupsAndCounts()} />
+                    <div id="all-done-group">
+                        All done with <em>{currentFilterDisplayName.current}</em>.
+                        Choose another group to continue:
+                        <PlantGroupSelect selectedValue={currentFilter} showBlank={true} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
                 : currentPlant === null ? (
@@ -241,7 +270,7 @@ function App() {
                                     }
                                 </button>
                             </div>
-                            <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={filter} groups={getPlantGroupsAndCounts()} />
+                            <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
                             <div className={classNames("plant-info", {
                                     'unhidden': hasShownPlantInfo || isRevealingPlantInfo,
                                     'is-desktop': isDesktop
