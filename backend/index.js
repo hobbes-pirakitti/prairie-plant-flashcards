@@ -1,5 +1,5 @@
 const port = 3000;
-const jsonDataFileName = "data.json";
+const jsonDataFileName = "plants.json";
 const imagesFolder = "images";
 
 const express = require("express");
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
     res.send("Hello, World!");
 });
 
-app.get("/data", (req, res) => {
+app.get("/plants", (req, res) => {
     const jsonFilePath = path.join(process.cwd(), jsonDataFileName);
     res.sendFile(jsonFilePath);
 });
