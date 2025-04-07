@@ -31,7 +31,11 @@ body {
 }
 
 input, button, select {
-    font-size: 2rem;    
+    font-size: 2rem;   
+    
+    &:not([disabled]) {
+        cursor:  pointer;
+    }
 }
 
 #button-wrapper, select {
@@ -77,6 +81,10 @@ div#advance-action-wrapper {
             border-left: $desktop-triangle-size solid transparent;
             border-right: $desktop-triangle-size solid transparent;
             border-top: $desktop-triangle-size solid #aaa;
+        }
+
+        &:hover:before {
+            border-top-color: #000;
         }
 
         &[disabled] {
