@@ -1,7 +1,7 @@
 import React from 'react';
 
 // assumes that there are grouped and ungrouped filters
-function PlantGroupSelect({ totalNonShortlistPlants: totalNonShortlistPlants, selectedValue, groups, showBlank, onChange }) {    
+function PlantGroupSelect({ totalNonShortlistPlants, selectedValue, groups, showBlank, onChange }) {    
     const groupedFilters = groups.filter(g => 'AttributeValues' in g);
     const unGroupedFilters = groups.filter(g => !('AttributeValues' in g));
     
