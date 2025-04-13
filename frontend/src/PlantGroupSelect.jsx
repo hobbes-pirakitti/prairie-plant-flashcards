@@ -1,16 +1,18 @@
 import React from 'react';
 
-function PlantGroupSelect({ selectedValue, groups, showBlank, onChange }) {    
+// assumes that there are grouped and ungrouped filters
+function PlantGroupSelect({ totalPlants, selectedValue, groups, showBlank, onChange }) {    
+    const groupedFilters = groups.filter(g => 'AttributeValues' in g);
+    const unGroupedFilters = groups.filter(g => !('AttributeValues' in g));
+    
     return <>
         <select name="groupFilter" value={selectedValue} onChange={(e) => onChange(e.target.value)}>
             {showBlank && <option key="Unselected" name=""></option>}
-            <option key="None" value="">None ({groups[0].AttributeValues.reduce(
-                (accumulator, current) => accumulator + current.Count,
-                0
-            )})</option>
-            
+
+            <option key="None" value="">None ({totalPlants})</option>            
+
             {
-                groups.map(group => 
+                groupedFilters.length > 0 && groupedFilters.map(group => 
                     <optgroup key={group.AttributeDisplayName} label={group.AttributeDisplayName}>
                     
                     {
@@ -20,7 +22,13 @@ function PlantGroupSelect({ selectedValue, groups, showBlank, onChange }) {
                     }
                     </optgroup>
                 )
-            }        
+            }    
+            
+            {
+                unGroupedFilters.length > 0 && unGroupedFilters.map(v =>                     
+                    <option key={v.FilterExpression} value={v.FilterExpression}>{v.DisplayName}&nbsp;({v.Count})</option>
+                )
+            }     
         </select>
     </>
     ;
