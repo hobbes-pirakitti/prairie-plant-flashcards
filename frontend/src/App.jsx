@@ -138,28 +138,19 @@ function App() {
             return;
         }        
         
-        if (!!currentFilter && getFilteredPlants(currentFilter).length == 1) {
-            setCurrentPlant(getFilteredPlants(currentFilter)[0]);
+        const currentFilteredPlants = getFilteredPlants(currentFilter);
+        if (currentFilteredPlants.length === 0) {
+            console.log("No filtered plants (1)");
+            return;
+        }    
+        if (currentFilteredPlants.length === 1) {
+            setCurrentPlant(currentFilteredPlants[0]);
             return;
         }
-
-        if (!!!currentFilter) {
-            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name && newPlant.filterAttributes.isShortlist)) {
-                const index = Math.floor(Math.random() * plants.length);
-                newPlant = plants[index];
-            }
-        }
-        else {
-            const filteredPlants = getFilteredPlants(currentFilter);
-            if (filteredPlants.length === 0) {
-                console.log("No filtered plants (1)");
-                return;
-            }            
-            
-            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
-                const filteredIndex = Math.floor(Math.random() * filteredPlants.length);
-                newPlant = filteredPlants[filteredIndex];
-            }
+        
+        while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
+            const filteredIndex = Math.floor(Math.random() * currentFilteredPlants.length);
+            newPlant = currentFilteredPlants[filteredIndex];
         }
         
         setCurrentPlant(newPlant);
