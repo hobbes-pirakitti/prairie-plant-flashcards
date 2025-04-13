@@ -80,6 +80,11 @@ function App() {
     }, [{keys:['a','A']}]);
     useKeyPress(() => {
         if (hasShownPlantInfo) {
+            handleShortlist();
+        }
+    }, [{keys:['s','S']}]); 
+    useKeyPress(() => {
+        if (hasShownPlantInfo) {
             handleCorrect();
         }
     }, [{keys:['c','C']}]);
