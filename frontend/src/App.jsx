@@ -13,15 +13,18 @@ import "/css/compiled/styles.css";
 
 const apiBaseUrl = "https://172.16.0.254:3000";
 
-const allFilterableAttributes = ["bloomColor", "family"];
+const allGroupedFilterableAttributes = ["bloomColor", "family"];
+const allUngroupedFilterableAttributes = ["shortlist"];
 
 const filterDisplayNameMap = new Map();
 filterDisplayNameMap.set("bloomColor", "Bloom color");
 filterDisplayNameMap.set("family", "Family");
+filterDisplayNameMap.set("shortlist", "Shortlist");
 
 const filterLambdaGeneratorMap = new Map();
-filterLambdaGeneratorMap.set("bloomColor", (bloomColorName) => (p => p.filterAttributes.bloomColor === bloomColorName));
-filterLambdaGeneratorMap.set("family", (familyName) => (p => p.filterAttributes.family === familyName));
+filterLambdaGeneratorMap.set("bloomColor", (bloomColorName) => (p => p.filterAttributes.bloomColor === bloomColorName && !p.filterAttributes.isShortlist));
+filterLambdaGeneratorMap.set("family", (familyName) => (p => p.filterAttributes.family === familyName && !p.filterAttributes.isShortlist));
+filterLambdaGeneratorMap.set("shortlist", () => (p => p.filterAttributes.isShortlist));
 
 function App() {
     const [plants, setPlants] = useState([]);
@@ -53,7 +56,8 @@ function App() {
                 apiPlant.imageUrl = apiBaseUrl + urijs.joinPaths("/image", apiPlant.image).href();
                 apiPlant.filterAttributes = {
                     bloomColor: apiPlant.bloomColor,
-                    family: apiPlant.family
+                    family: apiPlant.family,
+                    isShortlist: false
                 };
             }
             setPlants(apiPlants);
@@ -99,16 +103,23 @@ function App() {
 
         const [attributeName, attributeValue] = selectedFilter.split("|");
         
-        currentFilterDisplayName.current = `${filterDisplayNameMap.get(attributeName)}: ${attributeValue}`;
+        if (!!!attributeValue) {
+            // probably shortlist
+            currentFilterDisplayName.current = `${filterDisplayNameMap.get(attributeName)}`;
+        }
+        else {
+            currentFilterDisplayName.current = `${filterDisplayNameMap.get(attributeName)}: ${attributeValue}`;
+        }
         setCurrentFilter(selectedFilter);  
     }
 
     function getFilteredPlants(pipeSeparatedFilter) {        
         if (!!!pipeSeparatedFilter) {
-            return plants;
+            return plants.filter(p => !p.filterAttributes.isShortlist);
         }
 
         const [attributeName, attributeValue] = pipeSeparatedFilter.split("|");
+        
         const filterLambda = filterLambdaGeneratorMap.get(attributeName)(attributeValue);
         return plants.filter(filterLambda);
     }
@@ -120,14 +131,14 @@ function App() {
             setCurrentPlant(plants[0]);
             return;
         }        
-
+        
         if (!!currentFilter && getFilteredPlants(currentFilter).length == 1) {
             setCurrentPlant(getFilteredPlants(currentFilter)[0]);
             return;
         }
 
         if (!!!currentFilter) {
-            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
+            while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name && newPlant.filterAttributes.isShortlist)) {
                 const index = Math.floor(Math.random() * plants.length);
                 newPlant = plants[index];
             }
@@ -157,7 +168,12 @@ function App() {
     }
 
     function handleShortlist() {
-        resetUI();
+        
+        // either one seems to work, but better not to modify state directly?
+        //currentPlant.filterAttributes.isShortlist = true;
+        plants.find(p => p.name === currentPlant.name).filterAttributes.isShortlist = true;
+        
+        setPlants([...plants]);
     }
 
     function resetUI() {
@@ -194,7 +210,7 @@ function App() {
     }
 
     function getPlantGroupsAndCounts() {
-        return allFilterableAttributes.map(filterName => {                        
+        return allGroupedFilterableAttributes.map(filterName => {                        
             return {
                 AttributeDisplayName: filterDisplayNameMap.get(filterName),
                 
@@ -205,7 +221,13 @@ function App() {
                     Count: getFilteredPlants(`${filterName}|${filterValue}`).length
                 }))
             };
-        });
+        }).concat(
+            allUngroupedFilterableAttributes.map(filterName => ({
+                DisplayName: filterDisplayNameMap.get(filterName),
+                FilterExpression: `${filterName}`,
+                Count: getFilteredPlants(`${filterName}`).length
+            }))
+        );
     }            
 
     return <>
@@ -229,7 +251,7 @@ function App() {
                     <div id="all-done-group">
                         All done with <em>{currentFilterDisplayName.current}</em>.
                         Choose another group to continue:
-                        <PlantGroupSelect selectedValue={currentFilter} showBlank={true} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
+                        <PlantGroupSelect totalNonShortlistPlants={getFilteredPlants().length} selectedValue={currentFilter} showBlank={true} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
                     </div>                    
                 )
                 : currentPlant === null ? (
@@ -270,7 +292,7 @@ function App() {
                                     }
                                 </button>
                             </div>
-                            <PlantGroupSelect selectedValue={currentFilter} showBlank={false} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
+                            <PlantGroupSelect totalNonShortlistPlants={getFilteredPlants().length} selectedValue={currentFilter} showBlank={false} onChange={handleDropdownFilterChange} groups={getPlantGroupsAndCounts()} />
                             <div className={classNames("plant-info", {
                                     'unhidden': hasShownPlantInfo || isRevealingPlantInfo,
                                     'is-desktop': isDesktop
