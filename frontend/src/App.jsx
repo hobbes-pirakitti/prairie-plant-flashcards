@@ -25,7 +25,6 @@ const filterLambdaGeneratorMap = new Map();
 filterLambdaGeneratorMap.set("bloomColor", (bloomColorName) => (p => p.filterAttributes.bloomColor === bloomColorName && !p.filterAttributes.isShortlist));
 filterLambdaGeneratorMap.set("family", (familyName) => (p => p.filterAttributes.family === familyName && !p.filterAttributes.isShortlist));
 filterLambdaGeneratorMap.set("shortlist", () => (p => p.filterAttributes.isShortlist));
-filterLambdaGeneratorMap.set("shortlist", () => (p => p.filterAttributes.isShortlist));
 
 function App() {
     const [plants, setPlants] = useState([]);
