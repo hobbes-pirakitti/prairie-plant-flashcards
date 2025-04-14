@@ -9,10 +9,10 @@ function PlantGroupSelect({ totalNonShortlistPlants, selectedValue, groups, show
         <select name="groupFilter" value={selectedValue} onChange={(e) => onChange(e.target.value)}>
             {showBlank && <option key="Unselected" name=""></option>}
 
-            <option key="None" value="">None ({totalNonShortlistPlants})</option>            
+            {totalNonShortlistPlants > 0 && <option key="None" value="">None ({totalNonShortlistPlants})</option>}
 
             {
-                groupedFilters.length > 0 && groupedFilters.map(group => 
+                groupedFilters.length > 0 && groupedFilters.filter(g => g.AttributeValues.length > 0).map(group => 
                     <optgroup key={group.AttributeDisplayName} label={group.AttributeDisplayName}>
                     
                     {

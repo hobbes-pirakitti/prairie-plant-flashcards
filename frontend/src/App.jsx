@@ -17,6 +17,7 @@ const allGroupedFilterableAttributes = ["bloomColor", "family"];
 const allUngroupedFilterableAttributes = ["shortlist"];
 
 const filterDisplayNameMap = new Map();
+filterDisplayNameMap.set("", "Unfiltered");
 filterDisplayNameMap.set("bloomColor", "Bloom color");
 filterDisplayNameMap.set("family", "Family");
 filterDisplayNameMap.set("shortlist", "Shortlist");
@@ -32,7 +33,7 @@ function App() {
     const [hasShownPlantInfo, setHasShownPlantInfo] = useState(false);
     const [isRevealingPlantInfo, setIsRevealingPlantInfo] = useState(false);
     const [currentFilter, setCurrentFilter] = useState(""); // pipe-separated, eg, "family|Asteraceae"
-    const currentFilterDisplayName = useRef("");    
+    const currentFilterDisplayName = useRef(filterDisplayNameMap.get(""));    
     const [serverError, setServerError] = useState("");
     const plantInfo = useRef();
     const otherAdvanceHotspot = useRef(null);
@@ -102,7 +103,7 @@ function App() {
 
     function handleDropdownFilterChange(selectedFilter){
         if (!!!selectedFilter) {
-            currentFilterDisplayName.current = "";
+            currentFilterDisplayName.current = filterDisplayNameMap.get("");
             setCurrentFilter("");
         }
 
@@ -211,7 +212,7 @@ function App() {
                 AttributeDisplayName: filterDisplayNameMap.get(filterName),
                 
                 // deduplicate group names with Set
-                AttributeValues: Array.from(new Set(plants.map(p => p.filterAttributes[filterName]))).map(filterValue => ({
+                AttributeValues: Array.from(new Set(plants.filter(p => !p.filterAttributes.isShortlist).map(p => p.filterAttributes[filterName]))).map(filterValue => ({
                     DisplayName: filterValue,
                     FilterExpression: `${filterName}|${filterValue}`,
                     Count: getFilteredPlants(`${filterName}|${filterValue}`).length
@@ -243,7 +244,7 @@ function App() {
                 : plants.length === 0 ? (
                     <div id="all-done">All done!</div>
                 )                
-                : currentFilter !== "" && getFilteredPlants(currentFilter).length === 0 ? (
+                : getFilteredPlants(currentFilter).length === 0 ? (
                     <div id="all-done-group">
                         All done with <em>{currentFilterDisplayName.current}</em>.
                         Choose another group to continue:
