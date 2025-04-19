@@ -93,6 +93,10 @@ function App() {
     }, [{keys:['r','R']}]); 
 
     function showPlantInfo(){
+        if (hasShownPlantInfo || isRevealingPlantInfo) {
+            return;
+        }
+        
         setIsRevealingPlantInfo(true);
 
         window.setTimeout(() => {
