@@ -152,7 +152,7 @@ function App() {
             return;
         }
         
-        while(newPlant === null || (currentPlant !== null && newPlant.name == currentPlant.name)) {
+        while(newPlant === null || (currentPlant !== null && newPlant.id == currentPlant.id)) {
             const filteredIndex = Math.floor(Math.random() * currentFilteredPlants.length);
             newPlant = currentFilteredPlants[filteredIndex];
         }
@@ -172,7 +172,7 @@ function App() {
         
         // either one seems to work, but better not to modify state directly?
         //currentPlant.filterAttributes.isShortlist = true;
-        plants.find(p => p.name === currentPlant.name).filterAttributes.isShortlist = true;
+        plants.find(p => p.id === currentPlant.id).filterAttributes.isShortlist = true;
         
         setPlants([...plants]);
     }
@@ -189,7 +189,7 @@ function App() {
     function handleCorrect() {
         /*
         // warning!  two effects here        
-        setPlants(plants.filter(p => p.name !== currentPlant.name));
+        setPlants(plants.filter(p => p.id !== currentPlant.id));
         const newIndex = getRandomIndex();
         setCurrentIndex(newIndex);
         */
@@ -199,7 +199,7 @@ function App() {
         // State updates from the useState() and useReducer() Hooks don't support the second callback argument. 
         // To execute a side effect after rendering, declare it in the component body with useEffect().
         setPlants(
-            plants.filter(p => p.name !== currentPlant.name),
+            plants.filter(p => p.id !== currentPlant.id),
             () => {
                 const newIndex = getRandomIndex();
                 setCurrentIndex(newIndex);
@@ -207,7 +207,7 @@ function App() {
         ); 
         */
        
-        setPlants(plants.filter(p => p.name !== currentPlant.name));
+        setPlants(plants.filter(p => p.id !== currentPlant.id));
     }
 
     function getPlantGroupsAndCounts() {
