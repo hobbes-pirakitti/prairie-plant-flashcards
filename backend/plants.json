@@ -1,7 +1,6 @@
 [
    {
      "id": "LECA8",
-     "image": "bushclover.jpg",
      "name": "Bush Clover",
      "species": "Lespedeza capitata",
      "bloomTime": "Aug-Sept",
@@ -10,7 +9,6 @@
    },
    {
      "id": "EUCO10",
-     "image": "flowering-spurge.jpg",
      "name": "Flowering Spurge",
      "species": "Euphorbia corollata",
      "bloomTime": "Jul-Aug",
@@ -20,7 +18,6 @@
    },
    {
      "id": "CEAM",
-     "image": "New-Jersey-Tea.jpg",
      "name": "New Jersey Tea",
      "species": "Ceanothus americanus",
      "bloomTime": "Jul-Aug",
@@ -30,7 +27,6 @@
    },
    {
      "id": "DOME",
-     "image": "Shooting-Star.jpg",
      "name": "Shooting Star",
      "species": "Dodecatheon meadia",
      "bloomTime": "May-Jun",
@@ -40,7 +36,6 @@
    },
    {
      "id": "BAALM",
-     "image": "plant_white-indigo.jpg",
      "name": "White Indigo",
      "species": "Baptisia alba ",
      "bloomTime": "May-July",
@@ -49,7 +44,6 @@
    },
    {
      "id": "DACA7",
-     "image": "White-Prairie-Clvr.jpg",
      "name": "White Prairie Clover",
      "species": "Dalea candida",
      "bloomTime": "Jun-Aug",
@@ -58,7 +52,6 @@
    },
    {
      "id": "PAIN3",
-     "image": "Quinine-Flwr.jpg",
      "name": "Wild Quinine",
      "species": "Parthenium integrifolium",
      "bloomTime": "Jun-Sep",
@@ -67,7 +60,6 @@
    },
    {
      "id": "RUHI2",
-     "image": "Black-eyed-group.jpg",
      "name": "Black-Eyed Susan",
      "species": "Rudbeckia hirta",
      "bloomTime": "Jul-Sept",
@@ -77,7 +69,6 @@
    },
    {
      "id": "BABRL",
-     "image": "Cream-Indigo-Bystricky.jpg",
      "name": "Cream Indigo",
      "species": "Baptisia bracteata",
      "bloomTime": "May-Jun",
@@ -86,7 +77,6 @@
    },
    {
      "id": "ASTU",
-     "image": "Butt-weed-flwr-side.jpg",
      "name": "Butterfly Weed",
      "species": "Asclepias tuberosa",
      "bloomTime": "Jun-Aug",
@@ -96,7 +86,6 @@
    },
    {
      "id": "SILA3",
-     "image": "Compass-Plant-flwr.jpg",
      "name": "Compass Plant",
      "species": "Silphium laciniatum",
      "bloomTime": "Jun-Sep",
@@ -106,7 +95,6 @@
    },
    {
      "id": "ZIAP",
-     "image": "Golden-Alex.jpg",
      "name": "Heartleaf Golden Alexanders",
      "species": "Zizia aptera",
      "bloomTime": "May-Jun",
@@ -115,7 +103,6 @@
    },
    {
      "id": "COPA10",
-     "image": "Prairie-Coreopsis.jpg",
      "name": "Prairie Coreopsis",
      "species": "Coreopsis palmata",
      "bloomTime": "Jun-Aug",
@@ -124,7 +111,6 @@
    },
    {
      "id": "SITE",
-     "image": "Prairie-Dock-Flwr - Copy.jpg",
      "name": "Prairie Dock",
      "species": "Silphium terebinthinaceum",
      "bloomTime": "Jul-Sep",
@@ -134,7 +120,6 @@
    },
    {
      "id": "HEPAP2",
-     "image": "plant_prairie-sunflower.jpg",
      "name": "Prairie Sunflower",
      "species": "Helianthus pauciflorus",
      "bloomTime": "Jul-Oct",
@@ -144,7 +129,6 @@
    },
    {
      "id": "OPHU",
-     "image": "plant_prickleypaircactus.jpg",
      "name": "Prickly Pear Cactus",
      "species": "Opuntia humifusa",
      "bloomTime": "Jun-Jul",
@@ -154,7 +138,6 @@
    },
    {
      "id": "SIIN2",
-     "image": "Rosin-Weed - Copy (3).jpg",
      "name": "Rosin Weed",
      "species": "Silphium integrifolium",
      "bloomTime": "Jul-Sep",
@@ -164,7 +147,6 @@
    },
    {
      "id": "SOER",
-     "image": "Showy-Goldenrod-Solidago-speciosa.jpg",
      "name": "Showy Goldenrod",
      "species": "Solidago speciosa",
      "bloomTime": "Jul-Oct",
@@ -174,7 +156,6 @@
    },
    {
      "id": "HEOC2",
-     "image": "Western-Sunflower.jpg",
      "name": "Western Sunflower",
      "species": "Helianthus occidentalis",
      "bloomTime": "Jul-Aug",
@@ -184,7 +165,6 @@
    },
    {
      "id": "RAPI",
-     "image": "Yellow-Cnflwr.jpg",
      "name": "Yellow Coneflower",
      "species": "Ratibida pinnata",
      "bloomTime": "Jul-Sep",
@@ -193,7 +173,6 @@
    },
    {
      "id": "SYOB",
-     "image": "Aromatic-Aster-flwr.jpg",
      "name": "Aromatic Aster",
      "species": "Symphyotrichum oblongifolium",
      "bloomTime": "Aug-Oct",
@@ -203,7 +182,6 @@
    },
    {
      "id": "MOFI",
-     "image": "Bergamot.jpg",
      "name": "Bergamot",
      "species": "Monarda fistulosa",
      "bloomTime": "Jul-Sep",
@@ -213,7 +191,6 @@
    },
    {
      "id": "VIPE",
-     "image": "Birds-Foot-Violet-1.jpg",
      "name": "Bird's Foot Violet",
      "species": "Viola pedata",
      "bloomTime": "Apr-Jun",
@@ -223,7 +200,6 @@
    },
    {
      "id": "SICA9",
-     "image": "plant_prairie-blue-eyed-grass.jpg",
      "name": "Prairie Blue-Eyed Grass",
      "species": "Sisyrinchium campestre",
      "bloomTime": "May-Jun",
@@ -233,7 +209,6 @@
    },
    {
      "id": "AMCA6",
-     "image": "Lead-Plant - Copy.jpg",
      "name": "Lead Plant",
      "species": "Amorpha canescens",
      "bloomTime": "Jun-Jul",
@@ -243,7 +218,6 @@
    },
    {
      "id": "ECPA",
-     "image": "Pale-Purple-Coneflwr.jpg",
      "name": "Pale Purple Coneflower",
      "species": "Echinacea pallida",
      "bloomTime": "Jun-Jul",
@@ -253,7 +227,6 @@
    },
    {
      "id": "LIPY",
-     "image": "plant-prairie-blazingstar.jpg",
      "name": "Prairie Blazingstar",
      "species": "Liatris pycnostachya",
      "bloomTime": "Jul-Aug",
@@ -263,7 +236,6 @@
    },
    {
      "id": "DAPU5",
-     "image": "plant_purple-prairie-clover.jpg",
      "name": "Purple Prairie Clover",
      "species": "Dalea purpurea",
      "bloomTime": "Jul-Aug",
@@ -273,7 +245,6 @@
    },
    {
      "id": "SYSE2",
-     "image": "silky-aster.jpg",
      "name": "Silky Aster",
      "species": "Symphyotrichum sericeum",
      "bloomTime": "Sep-Oct",
@@ -283,7 +254,6 @@
    },
    {
      "id": "SYOOO",
-     "image": "plant_skyblueaster.jpg",
      "name": "Sky Blue Aster",
      "species": "Symphyotrichum oolentangiense",
      "bloomTime": "Sep-Oct",
@@ -293,7 +263,6 @@
    },
    {
      "id": "TROH",
-     "image": "Spiderwort-plt.jpg",
      "name": "Common Spiderwort",
      "species": "Tradescantia ohiensis",
      "bloomTime": "May-Jun",
@@ -302,7 +271,6 @@
    },
    {
      "id": "HERI",
-     "image": "Alum-Root.jpg",
      "name": "Prairie Alumroot",
      "species": "Heuchera richardsonii",
      "bloomTime": "Sep-Oct",
@@ -311,7 +279,6 @@
    },
    {
      "id": "ERYU",
-     "image": "Rattlesnake-Master-flwr.jpg",
      "name": "Rattlesnake Master",
      "species": "Eryngium yuccifolium",
      "bloomTime": "Jun-Aug",
@@ -321,7 +288,6 @@
    },
    {
      "id": "ANGE",
-     "image": "plant_big-bluestem.jpg",
      "name": "Big Bluestem",
      "species": "Andropogon gerardii",
      "bloomTime": "Sept-Oct",
@@ -331,7 +297,6 @@
    },
    {
      "id": "SONU2",
-     "image": "Indian-grass2.jpg",
      "name": "Indian Grass",
      "species": "Sorghastrum nutans",
      "bloomTime": "Aug-Sep",
@@ -341,7 +306,6 @@
    },
    {
      "id": "SCSC",
-     "image": "Lil-Blue.jpg",
      "name": "Little Bluestem",
      "species": "Schizachyrium scoparium",
      "bloomTime": "Aug-Oct",
@@ -351,7 +315,6 @@
    },
    {
      "id": "SPHE",
-     "image": "Prairie-Dropseed.jpg",
      "name": "Prairie Dropseed",
      "species": "Sporobolus heterolepis",
      "bloomTime": "Aug-Sep",
@@ -361,7 +324,6 @@
    },
    {
      "id": "BOCU",
-     "image": "Bouteloua-curtipendula-Side-Oats-Grama.jpg",
      "name": "Side Oats Grama",
      "species": "Bouteloua curtipendula",
      "bloomTime": "Jul-Oct",
@@ -371,7 +333,6 @@
    },
    {
      "id": "PAVI2",
-     "image": "panicum-virgatum-switch-grass_main.jpg",
      "name": "Switch Grass",
      "species": "Panicum virgatum",
      "bloomTime": "Aug-Sep",

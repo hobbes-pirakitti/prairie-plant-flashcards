@@ -1,5 +1,6 @@
 const port = 3000;
 const plantsJsonDataFileName = "plants.json";
+const imagesJsonDataFileName = "images.json";
 const imagesFolder = "images";
 
 const express = require("express");
@@ -30,6 +31,11 @@ app.get("/favicon.ico", (req, res) => {
 
 app.get("/plants", (req, res) => {
     const jsonFilePath = path.join(process.cwd(), plantsJsonDataFileName);
+    res.sendFile(jsonFilePath);
+});
+
+app.get("/images", (req, res) => {
+    const jsonFilePath = path.join(process.cwd(), imagesJsonDataFileName);
     res.sendFile(jsonFilePath);
 });
 

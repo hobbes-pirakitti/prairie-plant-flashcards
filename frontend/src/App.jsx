@@ -41,28 +41,51 @@ function App() {
 
     useEffect(() => {
         const plantsDataUrl = new URL("plants", apiBaseUrl);
+        const imagesDataUrl = new URL("images", apiBaseUrl);
 
-        fetch(plantsDataUrl.href)
-          .then((res) => {
-            return res.json();
-          })
-          .catch((e) => {
-            console.error(e.message);
-            setServerError(e.message);
-            return Promise.reject(e);
-          })
-          .then((apiPlants) => {
-            console.log(apiPlants);
-            for (const apiPlant of apiPlants) {
-                apiPlant.imageUrl = apiBaseUrl + urijs.joinPaths("/image", apiPlant.image).href();
-                apiPlant.filterAttributes = {
-                    bloomColor: apiPlant.bloomColor,
-                    family: apiPlant.family,
-                    isShortlist: false
-                };
-            }
-            setPlants(apiPlants);
-          });
+        const plantsPromise = 
+            fetch(plantsDataUrl.href)
+                .then((res) => {
+                    return res.json();
+                })
+                .catch((e) => {
+                    console.error(e.message);
+                    setServerError(e.message);
+                    return Promise.reject(e);
+                });
+
+        const imagesPromise = 
+            fetch(imagesDataUrl.href)
+                .then((res) => {
+                    return res.json();
+                })
+                .catch((e) => {
+                    console.error(e.message);
+                    setServerError(e.message);
+                    return Promise.reject(e);
+                });
+
+        Promise.all([plantsPromise, imagesPromise])
+            .then(([apiPlants, apiImages]) => {
+                //console.log(apiPlants);
+                //console.log(apiImages);
+
+                const allData = apiPlants.reduce((result, plant) =>
+                    result.concat([{
+                        ...plant,
+                        imageUrls: apiImages.filter((i) => i.plantId === plant.id).map((i) => 
+                                apiBaseUrl + urijs.joinPaths("/image", i.imageFileName).href()
+                            ),
+                        filterAttributes: {
+                            bloomColor: plant.bloomColor,
+                            family: plant.family,
+                            isShortlist: false
+                        }
+                    }]), []);
+                console.log(allData);
+                
+                setPlants(allData);
+            });
       }, []);
 
     useEffect(() => {
@@ -305,7 +328,7 @@ function App() {
                                 <p className="bloom-time">{currentPlant.bloomTime}</p>            
                             </div>
                             <div id="image-and-stats-wrapper">
-                                <img className="plant-image" src={currentPlant.imageUrl} ref={plantInfo} />
+                                <img className="plant-image" src={currentPlant.imageUrls[0]} ref={plantInfo} />
                                 <div>
                                     {
                                         currentFilter == "" ?
