@@ -1,5 +1,6 @@
 [
    {
+     "id": "LECA8",
      "image": "bushclover.jpg",
      "name": "Bush Clover",
      "species": "Lespedeza capitata",
@@ -8,6 +9,7 @@
      "bloomColor": "White Flowers"
    },
    {
+     "id": "EUCO10",
      "image": "flowering-spurge.jpg",
      "name": "Flowering Spurge",
      "species": "Euphorbia corollata",
@@ -17,6 +19,7 @@
      "bloomColor": "White Flowers"
    },
    {
+     "id": "CEAM",
      "image": "New-Jersey-Tea.jpg",
      "name": "New Jersey Tea",
      "species": "Ceanothus americanus",
@@ -26,6 +29,7 @@
      "bloomColor": "White Flowers"
    },
    {
+     "id": "DOME",
      "image": "Shooting-Star.jpg",
      "name": "Shooting Star",
      "species": "Dodecatheon meadia",
@@ -35,22 +39,25 @@
      "bloomColor": "White Flowers"
    },
    {
+     "id": "BAALM",
      "image": "plant_white-indigo.jpg",
      "name": "White Indigo",
-     "species": "Baptisia leucantha",
+     "species": "Baptisia alba ",
      "bloomTime": "May-July",
      "family": "Fabaceae",
      "bloomColor": "White Flowers"
    },
    {
+     "id": "DACA7",
      "image": "White-Prairie-Clvr.jpg",
      "name": "White Prairie Clover",
-     "species": "Petalostemum candidum",
+     "species": "Dalea candida",
      "bloomTime": "Jun-Aug",
      "family": "Fabaceae",
      "bloomColor": "White Flowers"
    },
    {
+     "id": "PAIN3",
      "image": "Quinine-Flwr.jpg",
      "name": "Wild Quinine",
      "species": "Parthenium integrifolium",
@@ -59,6 +66,7 @@
      "bloomColor": "White Flowers"
    },
    {
+     "id": "RUHI2",
      "image": "Black-eyed-group.jpg",
      "name": "Black-Eyed Susan",
      "species": "Rudbeckia hirta",
@@ -68,14 +76,16 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "BABRL",
      "image": "Cream-Indigo-Bystricky.jpg",
      "name": "Cream Indigo",
-     "species": "Baptisia leucophaea",
+     "species": "Baptisia bracteata",
      "bloomTime": "May-Jun",
      "family": "Fabaceae",
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "ASTU",
      "image": "Butt-weed-flwr-side.jpg",
      "name": "Butterfly Weed",
      "species": "Asclepias tuberosa",
@@ -85,6 +95,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "SILA3",
      "image": "Compass-Plant-flwr.jpg",
      "name": "Compass Plant",
      "species": "Silphium laciniatum",
@@ -94,6 +105,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "ZIAP",
      "image": "Golden-Alex.jpg",
      "name": "Heartleaf Golden Alexanders",
      "species": "Zizia aptera",
@@ -102,6 +114,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "COPA10",
      "image": "Prairie-Coreopsis.jpg",
      "name": "Prairie Coreopsis",
      "species": "Coreopsis palmata",
@@ -110,6 +123,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "SITE",
      "image": "Prairie-Dock-Flwr - Copy.jpg",
      "name": "Prairie Dock",
      "species": "Silphium terebinthinaceum",
@@ -119,15 +133,17 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "HEPAP2",
      "image": "plant_prairie-sunflower.jpg",
      "name": "Prairie Sunflower",
-     "species": "Helianthus rigidus",
+     "species": "Helianthus pauciflorus",
      "bloomTime": "Jul-Oct",
      "comments": "Butterfly Friendly; Possibly Aggressive",
      "family": "Asteraceae",
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "OPHU",
      "image": "plant_prickleypaircactus.jpg",
      "name": "Prickly Pear Cactus",
      "species": "Opuntia humifusa",
@@ -137,6 +153,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "SIIN2",
      "image": "Rosin-Weed - Copy (3).jpg",
      "name": "Rosin Weed",
      "species": "Silphium integrifolium",
@@ -146,6 +163,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "SOER",
      "image": "Showy-Goldenrod-Solidago-speciosa.jpg",
      "name": "Showy Goldenrod",
      "species": "Solidago speciosa",
@@ -155,6 +173,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "HEOC2",
      "image": "Western-Sunflower.jpg",
      "name": "Western Sunflower",
      "species": "Helianthus occidentalis",
@@ -164,6 +183,7 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "RAPI",
      "image": "Yellow-Cnflwr.jpg",
      "name": "Yellow Coneflower",
      "species": "Ratibida pinnata",
@@ -172,15 +192,17 @@
      "bloomColor": "Yellow/Orange Flowers"
    },
    {
+     "id": "SYOB",
      "image": "Aromatic-Aster-flwr.jpg",
      "name": "Aromatic Aster",
-     "species": "Aster oblongifolius",
+     "species": "Symphyotrichum oblongifolium",
      "bloomTime": "Aug-Oct",
      "comments": "Mound of flowers",
      "family": "Asteraceae",
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "MOFI",
      "image": "Bergamot.jpg",
      "name": "Bergamot",
      "species": "Monarda fistulosa",
@@ -190,6 +212,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "VIPE",
      "image": "Birds-Foot-Violet-1.jpg",
      "name": "Bird's Foot Violet",
      "species": "Viola pedata",
@@ -199,6 +222,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "SICA9",
      "image": "plant_prairie-blue-eyed-grass.jpg",
      "name": "Prairie Blue-Eyed Grass",
      "species": "Sisyrinchium campestre",
@@ -208,6 +232,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "AMCA6",
      "image": "Lead-Plant - Copy.jpg",
      "name": "Lead Plant",
      "species": "Amorpha canescens",
@@ -217,6 +242,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "ECPA",
      "image": "Pale-Purple-Coneflwr.jpg",
      "name": "Pale Purple Coneflower",
      "species": "Echinacea pallida",
@@ -226,6 +252,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "LIPY",
      "image": "plant-prairie-blazingstar.jpg",
      "name": "Prairie Blazingstar",
      "species": "Liatris pycnostachya",
@@ -235,33 +262,37 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "DAPU5",
      "image": "plant_purple-prairie-clover.jpg",
      "name": "Purple Prairie Clover",
-     "species": "Petalostemum purpureum",
+     "species": "Dalea purpurea",
      "bloomTime": "Jul-Aug",
      "comments": "Butterfly friendly",
      "family": "Fabaceae",
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "SYSE2",
      "image": "silky-aster.jpg",
      "name": "Silky Aster",
-     "species": "Aster sericeus",
+     "species": "Symphyotrichum sericeum",
      "bloomTime": "Sep-Oct",
      "comments": "Butterfly friendly",
      "family": "Asteraceae",
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "SYOOO",
      "image": "plant_skyblueaster.jpg",
      "name": "Sky Blue Aster",
-     "species": "Aster azureus",
+     "species": "Symphyotrichum oolentangiense",
      "bloomTime": "Sep-Oct",
      "comments": "Butterfly friendly",
      "family": "Asteraceae",
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "TROH",
      "image": "Spiderwort-plt.jpg",
      "name": "Common Spiderwort",
      "species": "Tradescantia ohiensis",
@@ -270,6 +301,7 @@
      "bloomColor": "Blue/Purple Flowers"
    },
    {
+     "id": "HERI",
      "image": "Alum-Root.jpg",
      "name": "Prairie Alumroot",
      "species": "Heuchera richardsonii",
@@ -278,6 +310,7 @@
      "bloomColor": "Green Flowers"
    },
    {
+     "id": "ERYU",
      "image": "Rattlesnake-Master-flwr.jpg",
      "name": "Rattlesnake Master",
      "species": "Eryngium yuccifolium",
@@ -287,6 +320,7 @@
      "bloomColor": "Green Flowers"
    },
    {
+     "id": "ANGE",
      "image": "plant_big-bluestem.jpg",
      "name": "Big Bluestem",
      "species": "Andropogon gerardii",
@@ -296,6 +330,7 @@
      "bloomColor": "Prairie Grasses"
    },
    {
+     "id": "SONU2",
      "image": "Indian-grass2.jpg",
      "name": "Indian Grass",
      "species": "Sorghastrum nutans",
@@ -305,15 +340,17 @@
      "bloomColor": "Prairie Grasses"
    },
    {
+     "id": "SCSC",
      "image": "Lil-Blue.jpg",
      "name": "Little Bluestem",
-     "species": "Andropogon scoparius",
+     "species": "Schizachyrium scoparium",
      "bloomTime": "Aug-Oct",
      "comments": "Great fall color",
      "family": "Poaceae",
      "bloomColor": "Prairie Grasses"
    },
    {
+     "id": "SPHE",
      "image": "Prairie-Dropseed.jpg",
      "name": "Prairie Dropseed",
      "species": "Sporobolus heterolepis",
@@ -323,6 +360,7 @@
      "bloomColor": "Prairie Grasses"
    },
    {
+     "id": "BOCU",
      "image": "Bouteloua-curtipendula-Side-Oats-Grama.jpg",
      "name": "Side Oats Grama",
      "species": "Bouteloua curtipendula",
@@ -332,6 +370,7 @@
      "bloomColor": "Prairie Grasses"
    },
    {
+     "id": "PAVI2",
      "image": "panicum-virgatum-switch-grass_main.jpg",
      "name": "Switch Grass",
      "species": "Panicum virgatum",
