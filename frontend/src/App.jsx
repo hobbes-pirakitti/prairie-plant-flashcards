@@ -35,7 +35,6 @@ function App() {
     const [currentFilter, setCurrentFilter] = useState(""); // pipe-separated, eg, "family|Asteraceae"
     const currentFilterDisplayName = useRef(filterDisplayNameMap.get(""));    
     const [serverError, setServerError] = useState("");
-    const plantInfo = useRef();
     const otherAdvanceHotspot = useRef(null);
     const isDesktop = !isMobile({ tablet: true });
 
@@ -328,7 +327,7 @@ function App() {
                                 <p className="bloom-time">{currentPlant.bloomTime}</p>            
                             </div>
                             <div id="image-and-stats-wrapper">
-                                <img className="plant-image" src={currentPlant.imageUrls[0]} ref={plantInfo} />
+                                <img className="plant-image" src={currentPlant.imageUrls[0]} />
                                 <div>
                                     {
                                         currentFilter == "" ?
