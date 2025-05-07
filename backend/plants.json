@@ -3,7 +3,7 @@
      "id": "LECA8",
      "name": "Bush Clover",
      "species": "Lespedeza capitata",
-     "bloomTime": "Aug-Sept",
+     "bloomTime": "Aug-Sep",
      "family": "Fabaceae",
      "bloomColor": "White Flowers"
    },
@@ -38,7 +38,7 @@
      "id": "BAALM",
      "name": "White Indigo",
      "species": "Baptisia alba ",
-     "bloomTime": "May-July",
+     "bloomTime": "May-Jul",
      "family": "Fabaceae",
      "bloomColor": "White Flowers"
    },
@@ -62,7 +62,7 @@
      "id": "RUHI2",
      "name": "Black-Eyed Susan",
      "species": "Rudbeckia hirta",
-     "bloomTime": "Jul-Sept",
+     "bloomTime": "Jul-Sep",
      "comments": "Butterfly Friendly",
      "family": "Asteraceae",
      "bloomColor": "Yellow/Orange Flowers"
@@ -290,7 +290,7 @@
      "id": "ANGE",
      "name": "Big Bluestem",
      "species": "Andropogon gerardii",
-     "bloomTime": "Sept-Oct",
+     "bloomTime": "Sep-Oct",
      "comments": "Purple fall color",
      "family": "Poaceae",
      "bloomColor": "Prairie Grasses"
@@ -337,6 +337,14 @@
      "species": "Panicum virgatum",
      "bloomTime": "Aug-Sep",
      "comments": "Spreads aggressively; Beautiful seed heads",
+     "family": "Poaceae",
+     "bloomColor": "Prairie Grasses"
+   },
+   {
+     "id": "DASP2",
+     "name": "Poverty Oatgrass",
+     "species": "Danthonia spicata",
+     "bloomTime": "May-Jul",
      "family": "Poaceae",
      "bloomColor": "Prairie Grasses"
    }

@@ -154,5 +154,9 @@
    {
      "plantId": "PAVI2",
      "imageFileName": "panicum-virgatum-switch-grass_main.jpg"
-   }
+   },
+   {
+     "plantId": "DASP2",
+     "imageFileName": "poverty.webp"
+   }   
  ]
